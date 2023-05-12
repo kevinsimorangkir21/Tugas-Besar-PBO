@@ -16,7 +16,6 @@ pygame.display.set_icon(icon)
 
 def main():
     # game = Game(screen, fps_clock)
-    game.play()
     pygame.quit()
 
 
