@@ -1,4 +1,3 @@
-## **Game Lost**
 <img src="img/logo/banner.png" width="100%">
 
 
