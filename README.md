@@ -1,5 +1,5 @@
 ## **Game Lost**
-<img src="img/logo/lost_logo.png" width="100%">
+<img src="img/logo/welcome_logo.png" width="100%">
 
 
 ## **Game Language**
