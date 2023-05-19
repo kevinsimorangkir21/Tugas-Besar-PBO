@@ -38,7 +38,14 @@ def draw_panel():
 		#show name and health
 		draw_text(f'{i.name} HP: {i.hp}', asset.font, asset.red, 550, (screen_height - bottom_panel + 10) + count * 60)
 
-
+def draw_panel_2():
+	#draw panel rectangle
+	screen.blit(asset.panel_img, (0, screen_height - bottom_panel))
+	#show knight stats
+	draw_text(f'{knight.name} HP: {knight.hp}', asset.font, asset.red, 100, screen_height - bottom_panel + 10)
+	for count, i in enumerate(bandit_list2):
+		#show name and health
+		draw_text(f'{i.name} HP: {i.hp}', asset.font, asset.red, 550, (screen_height - bottom_panel + 10) + count * 60)
 
 
 #fighter class
@@ -256,11 +263,19 @@ class DamageText(pygame.sprite.Sprite):
 damage_text_group = pygame.sprite.Group()
 
 asset = asset.Game()
-knight = Knight(200, 260, 'Knight', 50, 10, 3)
-bandit1 = Bandit(550, 270, 'Bandit', 20, 6, 1)
-bandit2 = Bandit(700, 270, 'Bandit', 20, 6, 1)
-bandit3 = Bandit(400, 270, 'Bandit', 20, 6, 1)
+
+#level 1 dan 2
+knight = Knight(200, 260, 'Knight', 30, 10, 3)
+bandit1 = Bandit(550, 270, 'Bandit', 2, 6, 1)
+bandit2 = Bandit(700, 270, 'Bandit', 2, 6, 1)
+bandit3 = Bandit(400, 270, 'Bandit', 2, 6, 1)
 
 bandit_list = []
 bandit_list.append(bandit1)
 bandit_list.append(bandit2)
+
+#level2
+bandit_list2 = []
+bandit_list2.append(bandit1)
+bandit_list2.append(bandit2)
+bandit_list2.append(bandit3)

@@ -5,7 +5,7 @@ class Game:
 
         # Game variables
         self.current_fighter = 1
-        self.total_fighters = 4
+        self.total_fighters = 3
         self.action_cooldown = 0
         self.action_wait_time = 90
         self.attack = False
@@ -29,6 +29,7 @@ class Game:
         # Button images
         self.potion_img = pygame.image.load('img/Icons/potion.png').convert_alpha()
         self.restart_img = pygame.image.load('img/Icons/restart.png').convert_alpha()
+        self.level2_img = pygame.image.load('img/Icons/level_2.png').convert_alpha()
         # Load victory and defeat images
         self.victory_img = pygame.image.load('img/Icons/victory.png').convert_alpha()
         self.defeat_img = pygame.image.load('img/Icons/defeat.png').convert_alpha()
