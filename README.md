@@ -13,7 +13,7 @@ In this game, we present a game experience that combines pixelated graphic eleme
 Silahkan untuk melakukan clone Github menggunakan Git
 
 ```bash
-  git clone https://github.com/alghiffari10/Project-Tubes.git
+  git clone https://github.com/kevinsimorangkir21/Tugas-Besar-PBO.git
 ```
 
 Setelah itu diharapkan untuk menginstall pygame
