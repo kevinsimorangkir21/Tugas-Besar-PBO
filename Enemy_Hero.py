@@ -217,6 +217,55 @@ class Knight(Fighter):
 		self.action = 0
 		self.update_time = pygame.time.get_ticks()
 
+class Siren(Fighter):
+	def __init__(self, x, y, name, max_hp, strength, potions):
+		super().__init__(x, y, name, max_hp, strength, potions)
+	
+
+	def attack(self, target):
+		asset.attacksirensword_sound.play()
+		asset.attacksirenvoice_sound.play()
+		
+		# deal damage to enemy
+		rand = random.randint(-5, 5)
+		damage = self.strength + rand
+		target.hp -= damage
+		# run enemy hurt animation
+		target.hurt()
+
+		# check if target has died
+		if target.hp < 1:
+			target.hp = 0
+			target.alive = False
+			target.death()
+		damage_text = DamageText(target.rect.centerx, target.rect.y, str(damage), asset.red)
+		damage_text_group.add(damage_text)
+		# set variables to attack animation
+		self.action = 1
+		self.frame_index = 0
+		self.update_time = pygame.time.get_ticks()
+
+	def hurt(self):
+		# set variables to hurt animation
+		self.action = 2
+		asset.hurtsiren_sound.play()
+		self.frame_index = 0
+		self.update_time = pygame.time.get_ticks()
+
+	def death(self):
+		# set variables to death animation
+		self.action = 3
+		asset.deathsiren_sound.play()
+		self.frame_index = 0
+		self.update_time = pygame.time.get_ticks()
+
+	def reset(self):
+		self.alive = True
+		self.potions = self.start_potions
+		self.hp = self.max_hp
+		self.frame_index = 0
+		self.action = 0
+		self.update_time = pygame.time.get_ticks()
 
 
 class HealthBar(ABC):
