@@ -46,7 +46,7 @@ class Display:
 		Display.draw_text(f'{knight.name} HP: {knight.hp}', asset.font, asset.red, 100, screen_height - bottom_panel + 10)
 		for count, i in enumerate(bandit_list2):
 			#show name and health
-			Display.draw_text(f'{i.name} HP: {i.hp}', asset.font, asset.red, 550, (screen_height - bottom_panel + 10) + count * 60)
+			Display.draw_text(f'{i.name} HP: {i.hp}', asset.font, asset.red, 550, (screen_height - bottom_panel + 10) + count * 40)
 
 
 #fighter class
@@ -287,8 +287,8 @@ class ConcreteHealthBar(HealthBar):
 		self.hp = hp
 		# calculate health ratio
 		ratio = self.hp / self.max_hp
-		pygame.draw.rect(screen, asset.red, (self.x, self.y, 150, 20))
-		pygame.draw.rect(screen, asset.green, (self.x, self.y, 150 * ratio, 20))
+		pygame.draw.rect(screen, asset.red, (self.x, self.y, 150, 10))
+		pygame.draw.rect(screen, asset.green, (self.x, self.y, 150 * ratio, 10))
 
 
 class DamageText(pygame.sprite.Sprite):

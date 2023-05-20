@@ -22,8 +22,8 @@ bandit_list.append(bandit2)
 #level1 dan 2
 knight_health_bar = Enemy_Hero.ConcreteHealthBar(100, Enemy_Hero.screen_height - Enemy_Hero.bottom_panel + 40, knight.hp, knight.max_hp)
 bandit1_health_bar = Enemy_Hero.ConcreteHealthBar(550, Enemy_Hero.screen_height - Enemy_Hero.bottom_panel + 40, bandit1.hp, bandit1.max_hp)
-bandit2_health_bar = Enemy_Hero.ConcreteHealthBar(550, Enemy_Hero.screen_height - Enemy_Hero.bottom_panel + 100, bandit2.hp, bandit2.max_hp)
-bandit3_health_bar = Enemy_Hero.ConcreteHealthBar(550, Enemy_Hero.screen_height - Enemy_Hero.bottom_panel + 10, bandit2.hp, bandit2.max_hp)
+bandit2_health_bar = Enemy_Hero.ConcreteHealthBar(550, Enemy_Hero.screen_height - Enemy_Hero.bottom_panel + 80, bandit2.hp, bandit2.max_hp)
+bandit3_health_bar = Enemy_Hero.ConcreteHealthBar(550, Enemy_Hero.screen_height - Enemy_Hero.bottom_panel + 120, bandit3.hp, bandit3.max_hp)
 
 #level2
 bandit_list2 = []
@@ -31,17 +31,19 @@ bandit_list2.append(bandit1)
 bandit_list2.append(bandit2)
 bandit_list2.append(bandit3)
 
+#level3
+
 #create buttons
 potion_button = button.Button(Enemy_Hero.screen, 100, Enemy_Hero.screen_height - Enemy_Hero.bottom_panel + 70, asset.potion_img, 64, 64)
-restart_button = button.Button(Enemy_Hero.screen, 330, 120, asset.restart_img, 120, 30)
-level_2_button = button.Button(Enemy_Hero.screen, 450, 120, asset.level2_img, 120, 30)
+restart_button = button.Button(Enemy_Hero.screen, 230, 120, asset.restart_img, 120, 30)
+level_2_button = button.Button(Enemy_Hero.screen, 430, 120, asset.level2_img, 120, 30)
 
 asset.backsound.play(-1)
-volume_value = 0.3
+volume_value = 0.1
 asset.backsound.set_volume(volume_value)
 
-level_1 = True
-level_2 = False
+level_1 = False
+level_2 = True
 level_3 = False
 run = True
 while run:
