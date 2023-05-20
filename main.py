@@ -8,7 +8,6 @@ pygame.init()
 
 damage_text_group = Enemy_Hero.damage_text_group
 asset = asset.Game()
-
 #level1 dan 2
 knight = Enemy_Hero.knight
 bandit1 = Enemy_Hero.bandit1
@@ -38,6 +37,8 @@ restart_button = button.Button(Enemy_Hero.screen, 330, 120, asset.restart_img, 1
 level_2_button = button.Button(Enemy_Hero.screen, 450, 120, asset.level2_img, 120, 30)
 
 asset.backsound.play(-1)
+volume_value = 0.3
+asset.backsound.set_volume(volume_value)
 
 level_1 = True
 level_2 = False
@@ -48,9 +49,9 @@ while run:
 	#draw background
 
 	if level_1:
-		Enemy_Hero.draw_bg()
+		Enemy_Hero.Display.draw_bg()
 		#draw panel
-		Enemy_Hero.draw_panel()
+		Enemy_Hero.Display.draw_panel()
 		knight_health_bar.draw(knight.hp)
 		bandit1_health_bar.draw(bandit1.hp)
 		bandit2_health_bar.draw(bandit2.hp)
@@ -87,7 +88,7 @@ while run:
 		if potion_button.draw():
 			asset.potion = True
 		#show number of potions remaining
-		Enemy_Hero.draw_text(str(knight.potions), asset.font, asset.red, 150, Enemy_Hero.screen_height - Enemy_Hero.bottom_panel + 70)
+		Enemy_Hero.Display.draw_text(str(knight.potions), asset.font, asset.red, 150, Enemy_Hero.screen_height - Enemy_Hero.bottom_panel + 70)
 
 
 		if asset.game_over == 0:
@@ -197,9 +198,9 @@ while run:
 					asset.game_over = 0	
 
 	elif level_2:
-		Enemy_Hero.draw_bg()
+		Enemy_Hero.Display.draw_bg()
 		#draw panel
-		Enemy_Hero.draw_panel_2()
+		Enemy_Hero.Display.draw_panel_2()
 		knight_health_bar.draw(knight.hp)
 		bandit1_health_bar.draw(bandit1.hp)
 		bandit2_health_bar.draw(bandit2.hp)
@@ -235,7 +236,7 @@ while run:
 		if potion_button.draw():
 			asset.potion = True
 		#show number of potions remaining
-		Enemy_Hero.draw_text(str(knight.potions), asset.font, asset.red, 150, Enemy_Hero.screen_height - Enemy_Hero.bottom_panel + 70)
+		Enemy_Hero.Display.draw_text(str(knight.potions), asset.font, asset.red, 150, Enemy_Hero.screen_height - Enemy_Hero.bottom_panel + 70)
 
 
 		if asset.game_over == 0:

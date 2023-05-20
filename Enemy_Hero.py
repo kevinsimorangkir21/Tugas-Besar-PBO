@@ -17,35 +17,36 @@ screen_height = 400 + bottom_panel
 screen = pygame.display.set_mode((screen_width, screen_height))
 pygame.display.set_caption('Battle')
 
-#create function for drawing text
-def draw_text(text, font, text_col, x, y):
-	img = font.render(text, True, text_col)
-	screen.blit(img, (x, y))
+class Display:
+	#create function for drawing text
+	def draw_text(text, font, text_col, x, y):
+		img = font.render(text, True, text_col)
+		screen.blit(img, (x, y))
 
 
-#function for drawing background
-def draw_bg():
-	screen.blit(asset.background_img, (0, 0))
+	#function for drawing background
+	def draw_bg():
+		screen.blit(asset.background_img, (0, 0))
 
 
-#function for drawing panel
-def draw_panel():
-	#draw panel rectangle
-	screen.blit(asset.panel_img, (0, screen_height - bottom_panel))
-	#show knight stats
-	draw_text(f'{knight.name} HP: {knight.hp}', asset.font, asset.red, 100, screen_height - bottom_panel + 10)
-	for count, i in enumerate(bandit_list):
-		#show name and health
-		draw_text(f'{i.name} HP: {i.hp}', asset.font, asset.red, 550, (screen_height - bottom_panel + 10) + count * 60)
+	#function for drawing panel
+	def draw_panel():
+		#draw panel rectangle
+		screen.blit(asset.panel_img, (0, screen_height - bottom_panel))
+		#show knight stats
+		Display.draw_text(f'{knight.name} HP: {knight.hp}', asset.font, asset.red, 100, screen_height - bottom_panel + 10)
+		for count, i in enumerate(bandit_list):
+			#show name and health
+			Display.draw_text(f'{i.name} HP: {i.hp}', asset.font, asset.red, 550, (screen_height - bottom_panel + 10) + count * 60)
 
-def draw_panel_2():
-	#draw panel rectangle
-	screen.blit(asset.panel_img, (0, screen_height - bottom_panel))
-	#show knight stats
-	draw_text(f'{knight.name} HP: {knight.hp}', asset.font, asset.red, 100, screen_height - bottom_panel + 10)
-	for count, i in enumerate(bandit_list2):
-		#show name and health
-		draw_text(f'{i.name} HP: {i.hp}', asset.font, asset.red, 550, (screen_height - bottom_panel + 10) + count * 60)
+	def draw_panel_2():
+		#draw panel rectangle
+		screen.blit(asset.panel_img, (0, screen_height - bottom_panel))
+		#show knight stats
+		Display.draw_text(f'{knight.name} HP: {knight.hp}', asset.font, asset.red, 100, screen_height - bottom_panel + 10)
+		for count, i in enumerate(bandit_list2):
+			#show name and health
+			Display.draw_text(f'{i.name} HP: {i.hp}', asset.font, asset.red, 550, (screen_height - bottom_panel + 10) + count * 60)
 
 
 #fighter class
@@ -312,7 +313,6 @@ class DamageText(pygame.sprite.Sprite):
 damage_text_group = pygame.sprite.Group()
 
 asset = asset.Game()
-
 #level 1 dan 2
 knight = Knight(200, 260, 'Knight', 30, 10, 3)
 bandit1 = Bandit(550, 270, 'Bandit', 2, 6, 1)
