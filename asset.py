@@ -31,6 +31,9 @@ class Game:
         self.restart_img = pygame.image.load('img/Icons/restart.png').convert_alpha()
         self.level2_img = pygame.image.load('img/Icons/level_2.png').convert_alpha()
         self.level3_img = pygame.image.load('img/Icons/level_3.png').convert_alpha()
+        self.level4_img = pygame.image.load('img/Icons/level_4.png').convert_alpha()
+        self.level5_img = pygame.image.load('img/Icons/level_5.png').convert_alpha()
+        self.level6_img = pygame.image.load('img/Icons/level_6.png').convert_alpha()
         # Load victory and defeat images
         self.victory_img = pygame.image.load('img/Icons/victory.png').convert_alpha()
         self.defeat_img = pygame.image.load('img/Icons/defeat.png').convert_alpha()
@@ -49,3 +52,6 @@ class Game:
         self.attacksirenvoice_sound = pygame.mixer.Sound('sound/nyerangsiren.wav')
         self.deathsiren_sound = pygame.mixer.Sound('sound\matisiren.wav')
         self.hurtsiren_sound = pygame.mixer.Sound('sound\hurtsiren.wav')
+        self.wizardattack_sound =  pygame.mixer.Sound('sound\wizardattack.wav')
+        self.wizarddeath_sound =  pygame.mixer.Sound('sound\wizarddeath.wav')
+        self.wizardhurt_sound =  pygame.mixer.Sound('sound\wizardhurt.wav')

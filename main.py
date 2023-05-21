@@ -40,11 +40,24 @@ siren_list.append(siren2)
 siren1_health_bar = Enemy_Hero.ConcreteHealthBar(550, Enemy_Hero.screen_height - Enemy_Hero.bottom_panel + 40, siren1.hp, siren1.max_hp)
 siren2_health_bar = Enemy_Hero.ConcreteHealthBar(550, Enemy_Hero.screen_height - Enemy_Hero.bottom_panel + 80, siren2.hp, siren2.max_hp)
 
+#level4
+wizard1 = Enemy_Hero.wizard1
+wizard2 = Enemy_Hero.wizard2
+wizard_list = []
+wizard_list.append(wizard1)
+wizard_list.append(wizard2)
+wizard1_health_bar = Enemy_Hero.ConcreteHealthBar(550, Enemy_Hero.screen_height - Enemy_Hero.bottom_panel + 40, wizard1.hp, wizard1.max_hp)
+wizard2_health_bar = Enemy_Hero.ConcreteHealthBar(550, Enemy_Hero.screen_height - Enemy_Hero.bottom_panel + 80, wizard2.hp, wizard2.max_hp)
+
+
 #create buttons
 potion_button = button.Button(Enemy_Hero.screen, 100, Enemy_Hero.screen_height - Enemy_Hero.bottom_panel + 70, asset.potion_img, 64, 64)
 restart_button = button.Button(Enemy_Hero.screen, 230, 120, asset.restart_img, 120, 30)
 level_2_button = button.Button(Enemy_Hero.screen, 430, 120, asset.level2_img, 120, 30)
 level_3_button = button.Button(Enemy_Hero.screen, 430, 120, asset.level3_img, 120, 30)
+level_4_button = button.Button(Enemy_Hero.screen, 430, 120, asset.level4_img, 120, 30)
+level_5_button = button.Button(Enemy_Hero.screen, 430, 120, asset.level5_img, 120, 30)
+level_6_button = button.Button(Enemy_Hero.screen, 430, 120, asset.level6_img, 120, 30)
 
 asset.backsound.play(-1)
 volume_value = 0.4
@@ -53,6 +66,10 @@ asset.backsound.set_volume(volume_value)
 level_1 = True
 level_2 = False
 level_3 = False
+level_4 = False
+level_5 = False
+level_6 = False
+
 run = True
 while run:
 	Enemy_Hero.clock.tick(Enemy_Hero.fps)
@@ -482,7 +499,16 @@ while run:
 					asset.current_fighter = 1
 					asset.action_cooldown
 					asset.game_over = 0
-					level_3 = True		
+					level_3 = True	
+				if level_4_button.draw():
+					level_3 = False
+					level_4 = True
+					knight.reset()
+					for bandit in bandit_list2:
+						bandit.reset()
+					asset.current_fighter = 1
+					asset.action_cooldown
+					asset.game_over = 0		
 			if asset.game_over == -1:
 				Enemy_Hero.screen.blit(asset.defeat_img, (290, 50))
 				if restart_button.draw():
@@ -493,7 +519,152 @@ while run:
 					asset.action_cooldown
 					asset.game_over = 0			
 		
+	elif level_4:
+		Enemy_Hero.Display.draw_bg()
+		#draw panel
+		Enemy_Hero.Display.draw_panel_3()
+		knight_health_bar.draw(knight.hp)
+		wizard1_health_bar.draw(wizard1.hp)
+		wizard2_health_bar.draw(wizard2.hp)
+		
+		#draw fighters
+		knight.update()
+		knight.draw()
+		for wizard in wizard_list:
+			wizard.update()
+			wizard.draw()
 
+		#draw the damage text
+		damage_text_group.update()
+		damage_text_group.draw(Enemy_Hero.screen)
+
+		#control player actions
+		#reset action variables
+		asset.attack = False
+		asset.potion = False
+		target = None
+		#make sure mouse is visible
+		pygame.mouse.set_visible(True)
+		pos = pygame.mouse.get_pos()
+		for count, wizard in enumerate(wizard_list):
+			if wizard.rect.collidepoint(pos):
+				#hide mouse
+				pygame.mouse.set_visible(False)
+				#show sword in place of mouse cursor
+				Enemy_Hero.screen.blit(asset.sword_img, pos)
+				if asset.clicked == True and wizard.alive == True:
+					asset.attack = True
+					target = wizard_list[count]
+		if potion_button.draw():
+			asset.potion = True
+		#show number of potions remaining
+		Enemy_Hero.Display.draw_text(str(knight.potions), asset.font, asset.red, 150, Enemy_Hero.screen_height - Enemy_Hero.bottom_panel + 70)
+
+
+		if asset.game_over == 0:
+			#player action
+			if knight.alive == True:
+				if asset.current_fighter == 1:
+					asset.action_cooldown += 1
+					if asset.action_cooldown >= asset.action_wait_time:
+						#look for player action
+						#attack
+						if asset.attack == True and target != None:
+							knight.attack(target)
+							asset.current_fighter += 1
+							asset.action_cooldown = 0
+						#potion
+						if asset.potion == True:
+							if knight.potions > 0:
+								#check if the potion would heal the player beyond max health
+								if knight.max_hp - knight.hp > asset.potion_effect:
+									heal_amount = asset.potion_effect
+								else:
+									heal_amount = knight.max_hp - knight.hp
+								knight.hp += heal_amount
+								knight.potions -= 1
+								damage_text = Enemy_Hero.DamageText(knight.rect.centerx, knight.rect.y, str(heal_amount), asset.green)
+								damage_text_group.add(damage_text)
+								asset.healup.play()
+								asset.current_fighter += 1
+								asset.action_cooldown = 0
+			else:
+				asset.game_over = -1
+
+
+			#enemy action
+			for count, wizard in enumerate(wizard_list):
+				if asset.current_fighter == 2 + count:
+					if wizard.alive == True:
+						asset.action_cooldown += 1
+						if asset.action_cooldown >= asset.action_wait_time:
+							#check if wizard needs to heal first
+							if (wizard.hp / wizard.max_hp) < 0.5 and wizard.potions > 0:
+								#check if the potion would heal the wizard beyond max health
+								if wizard.max_hp - wizard.hp > asset.potion_effect:
+									heal_amount = asset.potion_effect
+								else:
+									heal_amount = wizard.max_hp - wizard.hp
+								wizard.hp += heal_amount
+								wizard.potions -= 1
+								damage_text = Enemy_Hero.DamageText(wizard.rect.centerx, wizard.rect.y, str(heal_amount), asset.green)
+								damage_text_group.add(damage_text)
+								asset.healup.play()
+								asset.current_fighter += 1
+								asset.action_cooldown = 0
+							#attack
+							else:
+								wizard.attack(knight)
+		
+								asset.current_fighter += 1
+								asset.action_cooldown = 0
+					else:
+						asset.current_fighter += 1
+
+			#if all fighters have had a turn then reset
+			if asset.current_fighter > asset.total_fighters:
+				asset.current_fighter = 1
+
+
+		#check if all wizard are dead
+		alive_wizard = 0
+		for wizard in wizard_list:
+			if wizard.alive == True:
+				alive_wizard += 1
+		if alive_wizard == 0:
+			asset.game_over = 1
+
+
+		#check if game is over
+		if asset.game_over != 0:
+			if asset.game_over == 1:
+				Enemy_Hero.screen.blit(asset.victory_img, (250, 50))
+				if restart_button.draw():
+					knight.reset()
+					for wizard in wizard_list:
+						wizard.reset()
+					asset.current_fighter = 1
+					asset.action_cooldown
+					asset.game_over = 0
+					level_4 = True	
+				if level_5_button.draw():
+					level_4 = False
+					level_5 = True
+					knight.reset()
+					for bandit in bandit_list2:
+						bandit.reset()
+					asset.current_fighter = 1
+					asset.action_cooldown
+					asset.game_over = 0		
+			if asset.game_over == -1:
+				Enemy_Hero.screen.blit(asset.defeat_img, (290, 50))
+				if restart_button.draw():
+					knight.reset()
+					for wizard in wizard_list:
+						wizard.reset()
+					asset.current_fighter = 1
+					asset.action_cooldown
+					asset.game_over = 0
 	for event in pygame.event.get():
 		if event.type == pygame.QUIT:
 			run = False
