@@ -49,7 +49,6 @@ wizard_list.append(wizard2)
 wizard1_health_bar = Enemy_Hero.ConcreteHealthBar(550, Enemy_Hero.screen_height - Enemy_Hero.bottom_panel + 40, wizard1.hp, wizard1.max_hp)
 wizard2_health_bar = Enemy_Hero.ConcreteHealthBar(550, Enemy_Hero.screen_height - Enemy_Hero.bottom_panel + 80, wizard2.hp, wizard2.max_hp)
 
-
 #create buttons
 potion_button = button.Button(Enemy_Hero.screen, 100, Enemy_Hero.screen_height - Enemy_Hero.bottom_panel + 70, asset.potion_img, 64, 64)
 restart_button = button.Button(Enemy_Hero.screen, 230, 120, asset.restart_img, 120, 30)
@@ -412,7 +411,6 @@ while run:
 			asset.potion = True
 		#show number of potions remaining
 		Enemy_Hero.Display.draw_text(str(knight.potions), asset.font, asset.red, 150, Enemy_Hero.screen_height - Enemy_Hero.bottom_panel + 70)
-
 
 		if asset.game_over == 0:
 			#player action
