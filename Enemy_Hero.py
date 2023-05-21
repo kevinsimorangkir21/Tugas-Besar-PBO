@@ -55,7 +55,14 @@ class Display:
 		for count, i in enumerate(siren_list):
 			#show name and health
 			Display.draw_text(f'{i.name} HP: {i.hp}', asset.font, asset.red, 550, (screen_height - bottom_panel + 10) + count * 40)
-
+	def draw_panel_4():
+		#draw panel rectangle
+		screen.blit(asset.panel_img, (0, screen_height - bottom_panel))
+		#show knight stats
+		Display.draw_text(f'{knight.name} HP: {knight.hp}', asset.font, asset.red, 100, screen_height - bottom_panel + 10)
+		for count, i in enumerate(wizard_list):
+			#show name and health
+			Display.draw_text(f'{i.name} HP: {i.hp}', asset.font, asset.red, 550, (screen_height - bottom_panel + 10) + count * 40)
 
 #fighter class
 class Fighter():
@@ -276,6 +283,54 @@ class Siren(Fighter):
 		self.action = 0
 		self.update_time = pygame.time.get_ticks()
 
+class Wizard(Fighter):
+	def __init__(self, x, y, name, max_hp, strength, potions):
+		super().__init__(x, y, name, max_hp, strength, potions)
+	
+
+	def attack(self, target):
+		asset.wizardattack_sound.play()
+
+		# deal damage to enemy
+		rand = random.randint(-5, 10)
+		damage = self.strength + rand
+		target.hp -= damage
+		# run enemy hurt animation
+		target.hurt()
+
+		# check if target has died
+		if target.hp < 1:
+			target.hp = 0
+			target.alive = False
+			target.death()
+		damage_text = DamageText(target.rect.centerx, target.rect.y, str(damage), asset.red)
+		damage_text_group.add(damage_text)
+		# set variables to attack animation
+		self.action = 1
+		self.frame_index = 0
+		self.update_time = pygame.time.get_ticks()
+
+	def hurt(self):
+		# set variables to hurt animation
+		self.action = 2
+		asset.wizardhurt_sound.play()
+		self.frame_index = 0
+		self.update_time = pygame.time.get_ticks()
+
+	def death(self):
+		# set variables to death animation
+		self.action = 3
+		asset.wizarddeath_sound.play()
+		self.frame_index = 0
+		self.update_time = pygame.time.get_ticks()
+
+	def reset(self):
+		self.alive = True
+		self.potions = self.start_potions
+		self.hp = self.max_hp
+		self.frame_index = 0
+		self.action = 0
+		self.update_time = pygame.time.get_ticks()
 
 class HealthBar(ABC):
 	def __init__(self, x, y, hp, max_hp):
@@ -344,3 +399,10 @@ siren2 = Siren(700, 270, 'Siren', 8, 8, 2)
 siren_list = []
 siren_list.append(siren1)
 siren_list.append(siren2)
+
+#level4
+wizard1 = Wizard(550, 270, 'Wizard', 8, 8, 2)
+wizard2 = Wizard(700, 270, 'Wizard', 8, 8, 2)
+wizard_list = []
+wizard_list.append(wizard1)
+wizard_list.append(wizard2)
