@@ -63,10 +63,10 @@ asset.backsound.play(-1)
 volume_value = 0.4
 asset.backsound.set_volume(volume_value)
 
-level_1 = True
+level_1 = False
 level_2 = False
 level_3 = False
-level_4 = False
+level_4 = True
 level_5 = False
 level_6 = False
 
@@ -522,7 +522,7 @@ while run:
 	elif level_4:
 		Enemy_Hero.Display.draw_bg()
 		#draw panel
-		Enemy_Hero.Display.draw_panel_3()
+		Enemy_Hero.Display.draw_panel_4()
 		knight_health_bar.draw(knight.hp)
 		wizard1_health_bar.draw(wizard1.hp)
 		wizard2_health_bar.draw(wizard2.hp)
