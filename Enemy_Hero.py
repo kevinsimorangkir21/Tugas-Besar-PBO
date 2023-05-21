@@ -401,8 +401,8 @@ siren_list.append(siren1)
 siren_list.append(siren2)
 
 #level4
-wizard1 = Wizard(550, 270, 'Wizard', 8, 8, 2)
-wizard2 = Wizard(700, 270, 'Wizard', 8, 8, 2)
+wizard1 = Wizard(550, 255, 'Wizard', 8, 8, 2)
+wizard2 = Wizard(700, 255, 'Wizard', 8, 8, 2)
 wizard_list = []
 wizard_list.append(wizard1)
 wizard_list.append(wizard2)
