@@ -32,18 +32,26 @@ bandit_list2.append(bandit2)
 bandit_list2.append(bandit3)
 
 #level3
+siren1 = Enemy_Hero.siren1
+siren2 = Enemy_Hero.siren2
+siren_list = []
+siren_list.append(siren1)
+siren_list.append(siren2)
+siren1_health_bar = Enemy_Hero.ConcreteHealthBar(550, Enemy_Hero.screen_height - Enemy_Hero.bottom_panel + 40, siren1.hp, siren1.max_hp)
+siren2_health_bar = Enemy_Hero.ConcreteHealthBar(550, Enemy_Hero.screen_height - Enemy_Hero.bottom_panel + 80, siren2.hp, siren2.max_hp)
 
 #create buttons
 potion_button = button.Button(Enemy_Hero.screen, 100, Enemy_Hero.screen_height - Enemy_Hero.bottom_panel + 70, asset.potion_img, 64, 64)
 restart_button = button.Button(Enemy_Hero.screen, 230, 120, asset.restart_img, 120, 30)
 level_2_button = button.Button(Enemy_Hero.screen, 430, 120, asset.level2_img, 120, 30)
+level_3_button = button.Button(Enemy_Hero.screen, 430, 120, asset.level3_img, 120, 30)
 
 asset.backsound.play(-1)
-volume_value = 0.1
+volume_value = 0.4
 asset.backsound.set_volume(volume_value)
 
-level_1 = False
-level_2 = True
+level_1 = True
+level_2 = False
 level_3 = False
 run = True
 while run:
@@ -321,13 +329,22 @@ while run:
 				Enemy_Hero.screen.blit(asset.victory_img, (250, 50))
 				if restart_button.draw():
 					knight.reset()
-					for bandit in bandit_list:
+					for bandit in bandit_list2:
 						bandit.reset()
 					asset.current_fighter = 1
 					asset.action_cooldown
 					asset.game_over = 0
-					level_1 = True
-					level_2 = False				
+					level_2 = True
+					level_3 = False
+				if level_3_button.draw():
+					level_2 = False
+					level_3 = True
+					knight.reset()
+					for bandit in bandit_list2:
+						bandit.reset()
+					asset.current_fighter = 1
+					asset.action_cooldown
+					asset.game_over = 0				
 			if asset.game_over == -1:
 				Enemy_Hero.screen.blit(asset.defeat_img, (290, 50))
 				if restart_button.draw():
@@ -337,6 +354,145 @@ while run:
 					asset.current_fighter = 1
 					asset.action_cooldown
 					asset.game_over = 0	
+
+	elif level_3:
+		Enemy_Hero.Display.draw_bg()
+		#draw panel
+		Enemy_Hero.Display.draw_panel_3()
+		knight_health_bar.draw(knight.hp)
+		siren1_health_bar.draw(siren1.hp)
+		siren2_health_bar.draw(siren2.hp)
+		
+		#draw fighters
+		knight.update()
+		knight.draw()
+		for siren in siren_list:
+			siren.update()
+			siren.draw()
+
+		#draw the damage text
+		damage_text_group.update()
+		damage_text_group.draw(Enemy_Hero.screen)
+
+		#control player actions
+		#reset action variables
+		asset.attack = False
+		asset.potion = False
+		target = None
+		#make sure mouse is visible
+		pygame.mouse.set_visible(True)
+		pos = pygame.mouse.get_pos()
+		for count, siren in enumerate(siren_list):
+			if siren.rect.collidepoint(pos):
+				#hide mouse
+				pygame.mouse.set_visible(False)
+				#show sword in place of mouse cursor
+				Enemy_Hero.screen.blit(asset.sword_img, pos)
+				if asset.clicked == True and siren.alive == True:
+					asset.attack = True
+					target = siren_list[count]
+		if potion_button.draw():
+			asset.potion = True
+		#show number of potions remaining
+		Enemy_Hero.Display.draw_text(str(knight.potions), asset.font, asset.red, 150, Enemy_Hero.screen_height - Enemy_Hero.bottom_panel + 70)
+
+
+		if asset.game_over == 0:
+			#player action
+			if knight.alive == True:
+				if asset.current_fighter == 1:
+					asset.action_cooldown += 1
+					if asset.action_cooldown >= asset.action_wait_time:
+						#look for player action
+						#attack
+						if asset.attack == True and target != None:
+							knight.attack(target)
+							asset.current_fighter += 1
+							asset.action_cooldown = 0
+						#potion
+						if asset.potion == True:
+							if knight.potions > 0:
+								#check if the potion would heal the player beyond max health
+								if knight.max_hp - knight.hp > asset.potion_effect:
+									heal_amount = asset.potion_effect
+								else:
+									heal_amount = knight.max_hp - knight.hp
+								knight.hp += heal_amount
+								knight.potions -= 1
+								damage_text = Enemy_Hero.DamageText(knight.rect.centerx, knight.rect.y, str(heal_amount), asset.green)
+								damage_text_group.add(damage_text)
+								asset.healup.play()
+								asset.current_fighter += 1
+								asset.action_cooldown = 0
+			else:
+				asset.game_over = -1
+
+
+			#enemy action
+			for count, siren in enumerate(siren_list):
+				if asset.current_fighter == 2 + count:
+					if siren.alive == True:
+						asset.action_cooldown += 1
+						if asset.action_cooldown >= asset.action_wait_time:
+							#check if siren needs to heal first
+							if (siren.hp / siren.max_hp) < 0.5 and siren.potions > 0:
+								#check if the potion would heal the siren beyond max health
+								if siren.max_hp - siren.hp > asset.potion_effect:
+									heal_amount = asset.potion_effect
+								else:
+									heal_amount = siren.max_hp - siren.hp
+								siren.hp += heal_amount
+								siren.potions -= 1
+								damage_text = Enemy_Hero.DamageText(siren.rect.centerx, siren.rect.y, str(heal_amount), asset.green)
+								damage_text_group.add(damage_text)
+								asset.healup.play()
+								asset.current_fighter += 1
+								asset.action_cooldown = 0
+							#attack
+							else:
+								siren.attack(knight)
+		
+								asset.current_fighter += 1
+								asset.action_cooldown = 0
+					else:
+						asset.current_fighter += 1
+
+			#if all fighters have had a turn then reset
+			if asset.current_fighter > asset.total_fighters:
+				asset.current_fighter = 1
+
+
+		#check if all sirens are dead
+		alive_siren = 0
+		for siren in siren_list:
+			if siren.alive == True:
+				alive_siren += 1
+		if alive_siren == 0:
+			asset.game_over = 1
+
+
+		#check if game is over
+		if asset.game_over != 0:
+			if asset.game_over == 1:
+				Enemy_Hero.screen.blit(asset.victory_img, (250, 50))
+				if restart_button.draw():
+					knight.reset()
+					for siren in siren_list:
+						siren.reset()
+					asset.current_fighter = 1
+					asset.action_cooldown
+					asset.game_over = 0
+					level_3 = True		
+			if asset.game_over == -1:
+				Enemy_Hero.screen.blit(asset.defeat_img, (290, 50))
+				if restart_button.draw():
+					knight.reset()
+					for siren in siren_list:
+						siren.reset()
+					asset.current_fighter = 1
+					asset.action_cooldown
+					asset.game_over = 0			
+		
 
 	for event in pygame.event.get():
 		if event.type == pygame.QUIT:

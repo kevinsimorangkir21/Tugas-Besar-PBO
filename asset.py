@@ -30,6 +30,7 @@ class Game:
         self.potion_img = pygame.image.load('img/Icons/potion.png').convert_alpha()
         self.restart_img = pygame.image.load('img/Icons/restart.png').convert_alpha()
         self.level2_img = pygame.image.load('img/Icons/level_2.png').convert_alpha()
+        self.level3_img = pygame.image.load('img/Icons/level_3.png').convert_alpha()
         # Load victory and defeat images
         self.victory_img = pygame.image.load('img/Icons/victory.png').convert_alpha()
         self.defeat_img = pygame.image.load('img/Icons/defeat.png').convert_alpha()

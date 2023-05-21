@@ -37,7 +37,7 @@ class Display:
 		Display.draw_text(f'{knight.name} HP: {knight.hp}', asset.font, asset.red, 100, screen_height - bottom_panel + 10)
 		for count, i in enumerate(bandit_list):
 			#show name and health
-			Display.draw_text(f'{i.name} HP: {i.hp}', asset.font, asset.red, 550, (screen_height - bottom_panel + 10) + count * 60)
+			Display.draw_text(f'{i.name} HP: {i.hp}', asset.font, asset.red, 550, (screen_height - bottom_panel + 10) + count * 40)
 
 	def draw_panel_2():
 		#draw panel rectangle
@@ -45,6 +45,14 @@ class Display:
 		#show knight stats
 		Display.draw_text(f'{knight.name} HP: {knight.hp}', asset.font, asset.red, 100, screen_height - bottom_panel + 10)
 		for count, i in enumerate(bandit_list2):
+			#show name and health
+			Display.draw_text(f'{i.name} HP: {i.hp}', asset.font, asset.red, 550, (screen_height - bottom_panel + 10) + count * 40)
+	def draw_panel_3():
+		#draw panel rectangle
+		screen.blit(asset.panel_img, (0, screen_height - bottom_panel))
+		#show knight stats
+		Display.draw_text(f'{knight.name} HP: {knight.hp}', asset.font, asset.red, 100, screen_height - bottom_panel + 10)
+		for count, i in enumerate(siren_list):
 			#show name and health
 			Display.draw_text(f'{i.name} HP: {i.hp}', asset.font, asset.red, 550, (screen_height - bottom_panel + 10) + count * 40)
 
@@ -228,7 +236,7 @@ class Siren(Fighter):
 		asset.attacksirenvoice_sound.play()
 		
 		# deal damage to enemy
-		rand = random.randint(-5, 5)
+		rand = random.randint(-5, 10)
 		damage = self.strength + rand
 		target.hp -= damage
 		# run enemy hurt animation
@@ -316,8 +324,9 @@ asset = asset.Game()
 #level 1 dan 2
 knight = Knight(200, 260, 'Knight', 30, 10, 3)
 bandit1 = Bandit(550, 270, 'Bandit', 2, 6, 1)
-bandit2 = Bandit(700, 270, 'Bandit', 2, 6, 1)
-bandit3 = Bandit(400, 270, 'Bandit', 2, 6, 1)
+bandit2 = Bandit(700, 270, 'Bandit', 1, 6, 1)
+bandit3 = Bandit(400, 270, 'Bandit', 1, 6, 1)
+
 
 bandit_list = []
 bandit_list.append(bandit1)
@@ -328,3 +337,10 @@ bandit_list2 = []
 bandit_list2.append(bandit1)
 bandit_list2.append(bandit2)
 bandit_list2.append(bandit3)
+
+#level3
+siren1 = Siren(550, 270, 'Siren', 8, 8, 2)
+siren2 = Siren(700, 270, 'Siren', 8, 8, 2)
+siren_list = []
+siren_list.append(siren1)
+siren_list.append(siren2)
