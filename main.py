@@ -413,7 +413,6 @@ while run:
 		#show number of potions remaining
 		Enemy_Hero.Display.draw_text(str(knight.potions), asset.font, asset.red, 150, Enemy_Hero.screen_height - Enemy_Hero.bottom_panel + 70)
 
-
 		if asset.game_over == 0:
 			#player action
 			if knight.alive == True:
