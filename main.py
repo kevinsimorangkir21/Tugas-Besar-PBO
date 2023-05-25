@@ -70,12 +70,12 @@ asset.backsound.play(-1)
 volume_value = 0.4
 asset.backsound.set_volume(volume_value)
 
-level_1 = False
+level_1 = True
 level_2 = False
 level_3 = False
 level_4 = False
 level_5 = False
-level_6 = True
+level_6 = False
 
 run = True
 while run:
@@ -655,7 +655,7 @@ while run:
 					level_4 = True	
 				if level_5_button.draw():
 					level_4 = False
-					level_5 = True
+					level_6 = True
 					knight.reset()
 					for bandit in bandit_list2:
 						bandit.reset()
@@ -671,6 +671,8 @@ while run:
 					asset.current_fighter = 1
 					asset.action_cooldown
 					asset.game_over = 0
+	
+	
 	elif level_6:
 		Enemy_Hero.Display.draw_bg()
 		#draw panel
@@ -797,16 +799,7 @@ while run:
 					asset.current_fighter = 1
 					asset.action_cooldown
 					asset.game_over = 0
-					level_4 = True	
-				if level_5_button.draw():
-					level_4 = False
-					level_5 = True
-					knight.reset()
-					for bandit in bandit_list2:
-						bandit.reset()
-					asset.current_fighter = 1
-					asset.action_cooldown
-					asset.game_over = 0		
+					level_4 = True		
 			if asset.game_over == -1:
 				Enemy_Hero.screen.blit(asset.defeat_img, (290, 50))
 				if restart_button.draw():
