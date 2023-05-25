@@ -26,7 +26,7 @@ In this game, we present a game experience that combines pixelated graphic eleme
 ## **Instalation Steps**
 <li> Install Python 3.6 or higher </li>
 <li> Install python-pip or python3-pip </li>
-Open terminak where you want ti clone the repository and run the following command :
+Open terminal where you want ti clone the repository and run the following command :
 
 ```bash
 git clone https://github.com/kevinsimorangkir21/Tugas-Besar-PBO.git
