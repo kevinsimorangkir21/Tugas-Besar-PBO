@@ -15,7 +15,7 @@ screen_width = 800
 screen_height = 400 + bottom_panel
 
 screen = pygame.display.set_mode((screen_width, screen_height))
-pygame.display.set_caption('L0st')
+pygame.display.set_caption('Lost')
 
 class Display:
 	#create function for drawing text
