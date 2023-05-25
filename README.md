@@ -9,7 +9,9 @@
 
 ## **Table Of Contents**
 [Contributing](#member-of-chuakz-team)
+
 [Introduction Game](#introduction-game)
+
 [Installation Steps](#instalasi)
 
 
