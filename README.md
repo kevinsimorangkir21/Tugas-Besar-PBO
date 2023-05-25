@@ -2,6 +2,11 @@
 <img src="img/logo/cover.png" width="100%" />
 <h1> Lost Is A Game Created by CHUAKZ Team </h1>
 
+[![Library](https://img.shields.io/badge/pygame-orange)](#)
+[![Github Commit](https://img.shields.io/github/commit-activity/m/kevinsimorangkir21/Tugas-Besar-PBO)](#)
+[![Github Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg)](#)
+</div>
+
 ## **Introduction Game**
 In this game, we present a game experience that combines pixelated graphic elements with a turn based combat system. The main character in this game will face a number of enemies that must be fought in turn. Both players and enemies will have a basic attack that reduces health points. However, not only basic attacks, there is the ability to heal using potions. However, it is important to note that the potions available in this game are limited in quantity, so players must manage their usage wisely.
 
