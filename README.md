@@ -56,4 +56,4 @@ python main.py
 <img src="UML/UML.png" />
 
 ## **Screenshots**
-
+<img src="img/Screenshot/Lost - Screenshot 1.png" />
