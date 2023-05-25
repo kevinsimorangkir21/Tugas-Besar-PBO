@@ -55,3 +55,7 @@ class Game:
         self.wizardattack_sound =  pygame.mixer.Sound('sound\wizardattack.wav')
         self.wizarddeath_sound =  pygame.mixer.Sound('sound\wizarddeath.wav')
         self.wizardhurt_sound =  pygame.mixer.Sound('sound\wizardhurt.wav')
+        #bossmonstersound
+        self.monsterattack_sound = pygame.mixer.Sound('sound\tmonsterattack.wav')
+        self.monsterdeath_sound = pygame.mixer.Sound('sound\monsterdeath.wav')
+        self.monsterhurt_sound = pygame.mixer.Sound('sound\monsterhurt.wav')

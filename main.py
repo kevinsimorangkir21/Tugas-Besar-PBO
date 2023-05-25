@@ -1,3 +1,4 @@
+#Menu Import File
 import pygame
 import random
 import button
@@ -5,7 +6,7 @@ import asset
 import Enemy_Hero
 
 pygame.init()
-
+ 
 damage_text_group = Enemy_Hero.damage_text_group
 asset = asset.Game()
 #level1 dan 2
@@ -48,6 +49,13 @@ wizard_list.append(wizard1)
 wizard_list.append(wizard2)
 wizard1_health_bar = Enemy_Hero.ConcreteHealthBar(550, Enemy_Hero.screen_height - Enemy_Hero.bottom_panel + 40, wizard1.hp, wizard1.max_hp)
 wizard2_health_bar = Enemy_Hero.ConcreteHealthBar(550, Enemy_Hero.screen_height - Enemy_Hero.bottom_panel + 80, wizard2.hp, wizard2.max_hp)
+
+#level6
+monster1 = Enemy_Hero.monster1
+monster_list = []
+monster_list.append(monster1)
+monster1_health_bar = Enemy_Hero.ConcreteHealthBar(550, Enemy_Hero.screen_height - Enemy_Hero.bottom_panel + 40, monster1.hp, monster1.max_hp)
+
 
 #create buttons
 potion_button = button.Button(Enemy_Hero.screen, 100, Enemy_Hero.screen_height - Enemy_Hero.bottom_panel + 70, asset.potion_img, 64, 64)
