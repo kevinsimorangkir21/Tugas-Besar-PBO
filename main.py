@@ -1,3 +1,4 @@
+#Menu Import File
 import pygame
 import random
 import button
@@ -5,7 +6,7 @@ import asset
 import Enemy_Hero
 
 pygame.init()
-
+ 
 damage_text_group = Enemy_Hero.damage_text_group
 asset = asset.Game()
 #level1 dan 2
