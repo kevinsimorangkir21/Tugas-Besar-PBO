@@ -64,6 +64,15 @@ class Display:
 			#show name and health
 			Display.draw_text(f'{i.name} HP: {i.hp}', asset.font, asset.red, 550, (screen_height - bottom_panel + 10) + count * 40)
 
+	def draw_panel_5():
+		#draw panel rectangle
+		screen.blit(asset.panel_img, (0, screen_height - bottom_panel))
+		#show knight stats
+		Display.draw_text(f'{knight.name} HP: {knight.hp}', asset.font, asset.red, 100, screen_height - bottom_panel + 10)
+		for count, i in enumerate(wizard_list2):
+			#show name and health
+			Display.draw_text(f'{i.name} HP: {i.hp}', asset.font, asset.red, 550, (screen_height - bottom_panel + 10) + count * 40)
+
 	def draw_panel_6():
 		#draw panel rectangle
 		screen.blit(asset.panel_img, (0, screen_height - bottom_panel))
@@ -464,6 +473,13 @@ wizard2 = Wizard(700, 255, 'Wizard', 8, 8, 2)
 wizard_list = []
 wizard_list.append(wizard1)
 wizard_list.append(wizard2)
+
+#level5
+wizard3 = Wizard(300, 255, 'Wizard', 8, 8, 2)
+wizard_list2 = []
+wizard_list2.append(wizard1)
+wizard_list2.append(wizard2)
+wizard_list2.append(wizard3)
 
 #Level6
 monster1 = Monster(300, 62, 'Monster', 8, 8, 2)
