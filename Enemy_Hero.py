@@ -9,7 +9,7 @@ pygame.init()
 clock = pygame.time.Clock()
 fps = 60
 
-#game window
+#Layar Game
 bottom_panel = 150
 screen_width = 800
 screen_height = 400 + bottom_panel
