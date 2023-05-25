@@ -475,7 +475,7 @@ wizard_list.append(wizard1)
 wizard_list.append(wizard2)
 
 #level5
-wizard3 = Wizard(300, 255, 'Wizard', 8, 8, 2)
+wizard3 = Wizard(400, 255, 'Wizard', 8, 8, 2)
 wizard_list2 = []
 wizard_list2.append(wizard1)
 wizard_list2.append(wizard2)
