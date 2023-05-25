@@ -38,7 +38,7 @@ After that it is expected to install pygame
   pip instal pygame
 ```
 
-## **Running the Game with Python
+## **Running the Game with Python**
 <li> Install Python 3.6 or higher</li>
 Run the following command to start the game:
 
