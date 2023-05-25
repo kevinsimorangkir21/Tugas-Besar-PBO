@@ -1,5 +1,5 @@
-<img src="img/logo/Lost-Cover.mp4" width="100%" />
 <div align="center">
+<img src="img/logo/cover.png" width="100%" />
 <h1> Lost Is A Game Created by CHUAKZ Team </h1>
 
 [![Library](https://img.shields.io/badge/pygame-orange)](#)
