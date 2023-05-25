@@ -12,7 +12,7 @@
 
 [Introduction Game](#introduction-game)
 
-[Installation Steps](#instalasi)
+[Installation Steps](#instalation-steps)
 
 
 ## **Introduction Game**
@@ -23,17 +23,37 @@ In this game, we present a game experience that combines pixelated graphic eleme
 |  [<img src="img/member/kevin.png" width="100px;"/><br /><sub><b>Kevin Simorangkir</b></sub>](https://github.com/kevinsimorangkir21)<br /> 121140150  | [<img src="img/member/krisna.png" width="100px;"/><br /><sub><b>Ignatius Krisna</b></sub>](https://github.com/inExcelsis1710)<br />121140037  |  [<img src="img/member/rizka.png" width="100px;"/><br /><sub><b>Rizka Fauziyah</b></sub>](https://github.com/Rizkacantik)<br /> 121140133 | [<img src="img/member/nur.png" width="100px;"/><br /><sub><b>Nur Hikmah Juliyanti</b></sub>](https://github.com/nurhikmah137)<br />121140137  | [<img src="img/member/rizki.png" width="100px;"/><br /><sub><b>M. Rizki Alfaina</b></sub>](#)<br /> 121140228  | [<img src="img/member/setara.png" width="100px;"/><br /><sub><b>Ferreyla Setara Ibn</b></sub>](#)<br /> 121140207 |
 |--|--|--|--|--|--|
 
-## **Instalasi**
-
-Silahkan untuk melakukan clone Github menggunakan Git
+## **Instalation Steps**
+<li> Install Python 3.6 or higher </li>
+<li> Install python-pip or python3-pip </li>
+Open terminak where you want ti clone the repository and run the following command :
 
 ```bash
-  git clone https://github.com/kevinsimorangkir21/Tugas-Besar-PBO.git
+git clone https://github.com/kevinsimorangkir21/Tugas-Besar-PBO.git
+cd Tugas-Besar-PBO
 ```
 
-Setelah itu diharapkan untuk menginstall pygame
-
+After that it is expected to install pygame
 ```bash
   pip instal pygame
 ```
-## **
+
+## **Running the Game with Python**
+<li> Install Python 3.6 or higher</li>
+Run the following command to start the game:
+
+```
+python3 main.py
+```
+
+Alternative command:
+
+```
+python main.py
+```
+
+## **UML Diagram**
+<img src="UML/UML.png" />
+
+## **Screenshots**
+
