@@ -466,6 +466,6 @@ wizard_list.append(wizard1)
 wizard_list.append(wizard2)
 
 #Level6
-monster1 = Monster(550, 255, 'Monster', 8, 8, 2)
+monster1 = Monster(10, 25, 'Monster', 8, 8, 2)
 monster_list = []
 monster_list.append(monster1)

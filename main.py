@@ -70,12 +70,12 @@ asset.backsound.play(-1)
 volume_value = 0.4
 asset.backsound.set_volume(volume_value)
 
-level_1 = True
+level_1 = False
 level_2 = False
 level_3 = False
 level_4 = False
 level_5 = False
-level_6 = False
+level_6 = True
 
 run = True
 while run:
@@ -671,6 +671,152 @@ while run:
 					asset.current_fighter = 1
 					asset.action_cooldown
 					asset.game_over = 0
+	elif level_6:
+		Enemy_Hero.Display.draw_bg()
+		#draw panel
+		Enemy_Hero.Display.draw_panel_6()
+		knight_health_bar.draw(knight.hp)
+		monster1_health_bar.draw(monster1.hp)
+		
+		#draw fighters
+		knight.update()
+		knight.draw()
+		for monster in monster_list:
+			monster.update()
+			monster.draw()
+
+		#draw the damage text
+		damage_text_group.update()
+		damage_text_group.draw(Enemy_Hero.screen)
+
+		#control player actions
+		#reset action variables
+		asset.attack = False
+		asset.potion = False
+		target = None
+		#make sure mouse is visible
+		pygame.mouse.set_visible(True)
+		pos = pygame.mouse.get_pos()
+		for count, monster in enumerate(monster_list):
+			if monster.rect.collidepoint(pos):
+				#hide mouse
+				pygame.mouse.set_visible(False)
+				#show sword in place of mouse cursor
+				Enemy_Hero.screen.blit(asset.sword_img, pos)
+				if asset.clicked == True and monster.alive == True:
+					asset.attack = True
+					target = monster_list[count]
+		if potion_button.draw():
+			asset.potion = True
+		#show number of potions remaining
+		Enemy_Hero.Display.draw_text(str(knight.potions), asset.font, asset.red, 150, Enemy_Hero.screen_height - Enemy_Hero.bottom_panel + 70)
+
+
+		if asset.game_over == 0:
+			#player action
+			if knight.alive == True:
+				if asset.current_fighter == 1:
+					asset.action_cooldown += 1
+					if asset.action_cooldown >= asset.action_wait_time:
+						#look for player action
+						#attack
+						if asset.attack == True and target != None:
+							knight.attack(target)
+							asset.current_fighter += 1
+							asset.action_cooldown = 0
+						#potion
+						if asset.potion == True:
+							if knight.potions > 0:
+								#check if the potion would heal the player beyond max health
+								if knight.max_hp - knight.hp > asset.potion_effect:
+									heal_amount = asset.potion_effect
+								else:
+									heal_amount = knight.max_hp - knight.hp
+								knight.hp += heal_amount
+								knight.potions -= 1
+								damage_text = Enemy_Hero.DamageText(knight.rect.centerx, knight.rect.y, str(heal_amount), asset.green)
+								damage_text_group.add(damage_text)
+								asset.healup.play()
+								asset.current_fighter += 1
+								asset.action_cooldown = 0
+			else:
+				asset.game_over = -1
+
+
+			#enemy action
+			for count, monster in enumerate(monster_list):
+				if asset.current_fighter == 2 + count:
+					if monster.alive == True:
+						asset.action_cooldown += 1
+						if asset.action_cooldown >= asset.action_wait_time:
+							#check if monster needs to heal first
+							if (monster.hp / monster.max_hp) < 0.5 and monster.potions > 0:
+								#check if the potion would heal the monster beyond max health
+								if monster.max_hp - monster.hp > asset.potion_effect:
+									heal_amount = asset.potion_effect
+								else:
+									heal_amount = monster.max_hp - monster.hp
+								monster.hp += heal_amount
+								monster.potions -= 1
+								damage_text = Enemy_Hero.DamageText(monster.rect.centerx, monster.rect.y, str(heal_amount), asset.green)
+								damage_text_group.add(damage_text)
+								asset.healup.play()
+								asset.current_fighter += 1
+								asset.action_cooldown = 0
+							#attack
+							else:
+								monster.attack(knight)
+		
+								asset.current_fighter += 1
+								asset.action_cooldown = 0
+					else:
+						asset.current_fighter += 1
+
+			#if all fighters have had a turn then reset
+			if asset.current_fighter > asset.total_fighters:
+				asset.current_fighter = 1
+
+
+		#check if all monster are dead
+		alive_monster = 0
+		for monster in monster_list:
+			if monster.alive == True:
+				alive_monster += 1
+		if alive_monster == 0:
+			asset.game_over = 1
+
+
+		#check if game is over
+		if asset.game_over != 0:
+			if asset.game_over == 1:
+				Enemy_Hero.screen.blit(asset.victory_img, (250, 50))
+				if restart_button.draw():
+					knight.reset()
+					for monster in monster_list:
+						monster.reset()
+					asset.current_fighter = 1
+					asset.action_cooldown
+					asset.game_over = 0
+					level_4 = True	
+				if level_5_button.draw():
+					level_4 = False
+					level_5 = True
+					knight.reset()
+					for bandit in bandit_list2:
+						bandit.reset()
+					asset.current_fighter = 1
+					asset.action_cooldown
+					asset.game_over = 0		
+			if asset.game_over == -1:
+				Enemy_Hero.screen.blit(asset.defeat_img, (290, 50))
+				if restart_button.draw():
+					knight.reset()
+					for monster in monster_list:
+						monster.reset()
+					asset.current_fighter = 1
+					asset.action_cooldown
+					asset.game_over = 0
+	
 	for event in pygame.event.get():
 		if event.type == pygame.QUIT:
 			run = False
