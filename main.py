@@ -940,7 +940,7 @@ while run:
 						asset.current_fighter += 1
 
 			#if all fighters have had a turn then reset
-			if asset.current_fighter > 2:
+			if asset.current_fighter > asset.total_fighters_on_1_enemy:
 				asset.current_fighter = 1
 
 
