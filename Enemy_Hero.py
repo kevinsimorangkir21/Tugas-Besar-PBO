@@ -28,7 +28,9 @@ class Display:
 	def draw_bg():
 		screen.blit(asset.background_img, (0, 0))
 
-
+	def draw_bg2():
+		screen.blit(asset.background2_img, (0, 0))
+		
 	#function for drawing panel
 	def draw_panel():
 		#draw panel rectangle

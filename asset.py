@@ -27,6 +27,7 @@ class Game:
         # Load images
         # Background image
         self.background_img = pygame.image.load('img/Background/background.png').convert_alpha()
+        self.background2_img = pygame.image.load('img/Background/background2.png').convert_alpha()
         # Panel image
         self.panel_img = pygame.image.load('img/Icons/panel.png').convert_alpha()
         # Button images
