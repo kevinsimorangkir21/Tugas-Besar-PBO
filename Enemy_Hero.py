@@ -257,8 +257,9 @@ class Nightborne(Fighter):
 	
 
 	def attack(self, target):
-		asset.attackknight_sound.play()
-		
+		asset.nightborneattack_sound.play()
+		asset.nightborneattacksword_sound.play()
+
 		# deal damage to enemy
 		rand = random.randint(-5, 5)
 		damage = self.strength + rand
@@ -281,14 +282,15 @@ class Nightborne(Fighter):
 	def hurt(self):
 		# set variables to hurt animation
 		self.action = 2
-		asset.gethurt_knight.play()
+		asset.nightbornehurt_sound.play()
 		self.frame_index = 0
 		self.update_time = pygame.time.get_ticks()
 
 	def death(self):
 		# set variables to death animation
 		self.action = 3
-		asset.death_knight.play()
+		asset.nightbornedeath_sound.play()
+		asset.nightborneexplosion_sound.play()
 		self.frame_index = 0
 		self.update_time = pygame.time.get_ticks()
 
