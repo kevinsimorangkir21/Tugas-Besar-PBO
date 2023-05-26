@@ -104,9 +104,9 @@ while run:
 		if asset.start:
 			game_started = True	
 	
+	else:
 		Enemy_Hero.clock.tick(Enemy_Hero.fps)
 		#draw background
-	else:
 		if level_1:
 			Enemy_Hero.Display.draw_bg()
 			#draw panel
