@@ -522,8 +522,8 @@ while run:
 					level_3 = False
 					level_4 = True
 					knight.reset()
-					for bandit in bandit_list2:
-						bandit.reset()
+					for wizard in wizard_list:
+						wizard.reset()
 					asset.current_fighter = 1
 					asset.action_cooldown
 					asset.game_over = 0		
