@@ -79,10 +79,10 @@ volume_value = 0.05
 asset.backsound.set_volume(volume_value)
 
 level_1 = False
-level_2 = True
+level_2 = False
 level_3 = False
 level_4 = False
-level_5 = False
+level_5 = True
 level_6 = False
 
 run = True
