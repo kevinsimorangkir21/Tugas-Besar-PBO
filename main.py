@@ -686,6 +686,7 @@ while run:
 					asset.current_fighter = 1
 					asset.action_cooldown
 					asset.game_over = 0
+					level_1 = True
 	
 	elif level_5:
 		Enemy_Hero.Display.draw_bg()
