@@ -45,16 +45,16 @@ class Game:
         self.backsound = pygame.mixer.Sound('sound\ssound.mp3')
         self.healup = pygame.mixer.Sound('sound\heal-up.wav')
         #bandit sound
-        self.gethurt_bandit = pygame.mixer.Sound('sound\bandit\hurtbandit.wav')
-        self.attackbandit_sound = pygame.mixer.Sound('sound\bandit\serangbandit.wav')
-        self.death_bandit = pygame.mixer.Sound('sound\bandit\matibandit1.wav')
+        self.gethurt_bandit = pygame.mixer.Sound('sound\ibandit\hurtbandit.wav')
+        self.attackbandit_sound = pygame.mixer.Sound('sound\ibandit\serangbandit.wav')
+        self.death_bandit = pygame.mixer.Sound('sound\ibandit\matibandit1.wav')
         #knight sound
         self.death_knight = pygame.mixer.Sound('sound\knight\matiknight1.wav')
         self.gethurt_knight = pygame.mixer.Sound('sound\knight\knighthurt.wav')
         self.attackknight_sound = pygame.mixer.Sound('sound\knight\knightattack.wav')
         #siren sound
         self.attacksirensword_sound = pygame.mixer.Sound('sound\siren\sirenswordsound.wav')
-        self.attacksirenvoice_sound = pygame.mixer.Sound('sound\siren\nyerangsiren.wav')
+        self.attacksirenvoice_sound = pygame.mixer.Sound('sound\siren\serangsiren.wav')
         self.deathsiren_sound = pygame.mixer.Sound('sound\siren\matisiren.wav')
         self.hurtsiren_sound = pygame.mixer.Sound('sound\siren\hurtsiren.wav')
         #wizard sound
