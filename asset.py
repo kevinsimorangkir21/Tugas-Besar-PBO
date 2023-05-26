@@ -66,8 +66,8 @@ class Game:
         self.monsterdeath_sound = pygame.mixer.Sound('sound\monster\monsterdeath.wav')
         self.monsterhurt_sound = pygame.mixer.Sound('sound\monster\monsterhurt.wav')
         #nightbornesound
-        self.nightborneattack_sound = pygame.mixer.Sound('sound\nighborne\nighborneattack.wav')
-        self.nightborneattacksword_sound = pygame.mixer.Sound('sound\nighborne\nighborneattacksword.wav')
-        self.nightbornedeath_sound = pygame.mixer.Sound('sound\nighborne\nighbornedeath.wav')
-        self.nightbornehurt_sound = pygame.mixer.Sound('sound\nighborne\nighbornehurt.wav')
-        self.nightborneexplosion_sound = pygame.mixer.Sound('sound\nighborne\nighborneexplosion.wav')
+        self.nightborneattack_sound = pygame.mixer.Sound('sound\inightborne\inightborneattack.wav')
+        self.nightborneattacksword_sound = pygame.mixer.Sound('sound\inightborne\inightborneattacksword.wav')
+        self.nightbornedeath_sound = pygame.mixer.Sound('sound\inightborne\inightbornedeath.wav')
+        self.nightbornehurt_sound = pygame.mixer.Sound('sound\inightborne\inightbornehurt.wav')
+        self.nightborneexplosion_sound = pygame.mixer.Sound('sound\inightborne\inightborneexplosion.wav')
