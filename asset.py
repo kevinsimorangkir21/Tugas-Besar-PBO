@@ -53,10 +53,10 @@ class Game:
         self.gethurt_knight = pygame.mixer.Sound('sound\knight\knighthurt.wav')
         self.attackknight_sound = pygame.mixer.Sound('sound\knight\knightattack.wav')
         #siren sound
-        self.attacksirensword_sound = pygame.mixer.Sound('sound\sirenswordsound.wav')
-        self.attacksirenvoice_sound = pygame.mixer.Sound('sound/nyerangsiren.wav')
-        self.deathsiren_sound = pygame.mixer.Sound('sound\matisiren.wav')
-        self.hurtsiren_sound = pygame.mixer.Sound('sound\hurtsiren.wav')
+        self.attacksirensword_sound = pygame.mixer.Sound('sound\siren\sirenswordsound.wav')
+        self.attacksirenvoice_sound = pygame.mixer.Sound('sound\siren\nyerangsiren.wav')
+        self.deathsiren_sound = pygame.mixer.Sound('sound\siren\matisiren.wav')
+        self.hurtsiren_sound = pygame.mixer.Sound('sound\siren\hurtsiren.wav')
         #wizard sound
         self.wizardattack_sound =  pygame.mixer.Sound('sound\wizardattack.wav')
         self.wizarddeath_sound =  pygame.mixer.Sound('sound\wizarddeath.wav')
