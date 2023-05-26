@@ -45,7 +45,7 @@ class Game:
         self.healup = pygame.mixer.Sound('sound\heal-up.wav')
         #bandit sound
         self.gethurt_bandit = pygame.mixer.Sound('sound\hurtbandit.wav')
-        self.attackbandit_sound = pygame.mixer.Sound('sound\nyerangbandit.wav')
+        self.attackbandit_sound = pygame.mixer.Sound('sound\serangbandit.wav')
         self.death_bandit = pygame.mixer.Sound('sound\matibandit1.wav')
         #knight sound
         self.death_knight = pygame.mixer.Sound('sound\matiknight1.wav')
