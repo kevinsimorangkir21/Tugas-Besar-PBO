@@ -6,6 +6,7 @@ class Game:
         # Game variables
         self.current_fighter = 1
         self.total_fighters_on_3_enemy = 4
+        self.total_fighters_on_2_enemy = 4
         self.action_cooldown = 0
         self.action_wait_time = 90
         self.attack = False
