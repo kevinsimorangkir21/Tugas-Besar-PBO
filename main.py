@@ -966,15 +966,7 @@ while run:
 					asset.game_over = 0
 					level_5 = True
 					level_6 = False	
-				if level_6_button.draw():
-					level_5 = False
-					level_6 = True
-					knight.reset()
-					for monster in monster_list:
-						monster.reset()
-					asset.current_fighter = 1
-					asset.action_cooldown
-					asset.game_over = 0		
+	
 			if asset.game_over == -1:
 				Enemy_Hero.screen.blit(asset.defeat_img, (290, 50))
 				if restart_button.draw():
