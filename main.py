@@ -79,7 +79,6 @@ level_6_button = button.Button(Enemy_Hero.screen, 430, 120, asset.level6_img, 12
 asset.backsound.play(-1)
 volume_value = 0.05
 asset.backsound.set_volume(volume_value)
-
 def character_selection_screen():
 	Enemy_Hero.clock.tick(Enemy_Hero.fps)
 	Enemy_Hero.Display.draw_bg()
@@ -90,12 +89,12 @@ def character_selection_screen():
 		Enemy_Hero.character = knight
 		asset.start = True
 
-level_1 = False
+level_1 = True
 level_2 = False
 level_3 = False
 level_4 = False
 level_5 = False
-level_6 = True
+level_6 = False
 game_started = False
 
 run = True

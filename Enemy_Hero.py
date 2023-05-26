@@ -497,7 +497,7 @@ damage_text_group = pygame.sprite.Group()
 asset = asset.Game()
 
 #char
-nightborne = Nightborne(200, 260, 'Nightborne', 30, 10, 3)
+nightborne = Nightborne(190, 227, 'Nightborne', 30, 10, 3)
 knight = Knight(200, 260, 'Knight', 30, 10, 3)
 
 character = None
