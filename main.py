@@ -75,7 +75,7 @@ level_5_button = button.Button(Enemy_Hero.screen, 430, 120, asset.level5_img, 12
 level_6_button = button.Button(Enemy_Hero.screen, 430, 120, asset.level6_img, 120, 30)
 
 asset.backsound.play(-1)
-volume_value = 0.35
+volume_value = 0.05
 asset.backsound.set_volume(volume_value)
 
 level_1 = False
