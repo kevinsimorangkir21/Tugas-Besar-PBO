@@ -194,7 +194,7 @@ while run:
 						asset.current_fighter += 1
 
 			#if all fighters have had a turn then reset
-			if asset.current_fighter > asset.total_fighters:
+			if asset.current_fighter > asset.total_fighters_on_2_enemy:
 				asset.current_fighter = 1
 
 
@@ -345,7 +345,7 @@ while run:
 						asset.current_fighter += 1
 
 			#if all fighters have had a turn then reset
-			if asset.current_fighter > asset.total_fighters:
+			if asset.current_fighter > asset.total_fighters_on_3_enemy:
 				asset.current_fighter = 1
 
 
@@ -493,7 +493,7 @@ while run:
 						asset.current_fighter += 1
 
 			#if all fighters have had a turn then reset
-			if asset.current_fighter > asset.total_fighters:
+			if asset.current_fighter > asset.total_fighters_on_2_enemy:
 				asset.current_fighter = 1
 
 
@@ -642,7 +642,7 @@ while run:
 						asset.current_fighter += 1
 
 			#if all fighters have had a turn then reset
-			if asset.current_fighter > asset.total_fighters:
+			if asset.current_fighter > asset.total_fighters_on_2_enemy:
 				asset.current_fighter = 1
 
 
@@ -792,7 +792,7 @@ while run:
 						asset.current_fighter += 1
 
 			#if all fighters have had a turn then reset
-			if asset.current_fighter > asset.total_fighters:
+			if asset.current_fighter > asset.total_fighters_on_3_enemy:
 				asset.current_fighter = 1
 
 
