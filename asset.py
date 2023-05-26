@@ -40,7 +40,8 @@ class Game:
         self.victory_img = pygame.image.load('img/Icons/victory.png').convert_alpha()
         self.defeat_img = pygame.image.load('img/Icons/defeat.png').convert_alpha()
         # Sword image
-        self.sword_img = pygame.image.load('img/Icons/sword.png').convert_alpha()       
+        self.sword_img = pygame.image.load('img/Icons/sword.png').convert_alpha()
+        # main sound       
         self.backsound = pygame.mixer.Sound('sound\ssound.mp3')
         self.healup = pygame.mixer.Sound('sound\heal-up.wav')
         #bandit sound
