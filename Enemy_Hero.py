@@ -495,8 +495,11 @@ class DamageText(pygame.sprite.Sprite):
 damage_text_group = pygame.sprite.Group()
 
 asset = asset.Game()
-#level 1 dan 2
+
+#char
+nightborne = Nightborne(200, 260, 'Nightborne', 30, 10, 3)
 knight = Knight(200, 260, 'Knight', 30, 10, 3)
+#level 1 dan 2
 bandit1 = Bandit(550, 270, 'Bandit', 2, 6, 1)
 bandit2 = Bandit(700, 270, 'Bandit', 1, 6, 1)
 bandit3 = Bandit(400, 270, 'Bandit', 1, 6, 1)
