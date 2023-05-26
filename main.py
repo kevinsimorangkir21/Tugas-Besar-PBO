@@ -84,7 +84,9 @@ choose = button.Button(Enemy_Hero.screen, 325, 50, asset.cchoose_img, 120, 30)
 charknight_button = button.Button(Enemy_Hero.screen, 250, 120, asset.knightbutton_img, 120, 30)
 charnightborne_button = button.Button(Enemy_Hero.screen, 400, 120, asset.nightbornebutton_img, 120, 30)
 
-
+asset.backsound.play(-1)
+volume_value = 0.05
+asset.backsound.set_volume(volume_value)
 def character_selection_screen():
 	Enemy_Hero.clock.tick(Enemy_Hero.fps)
 	Enemy_Hero.Display.draw_bg2()
@@ -116,9 +118,7 @@ while run:
 			game_started = True	
 	
 	else:
-		asset.backsound.play(-1)
-		volume_value = 0.05
-		asset.backsound.set_volume(volume_value)
+		
 		Enemy_Hero.clock.tick(Enemy_Hero.fps)
 		#draw background
 		if level_1:

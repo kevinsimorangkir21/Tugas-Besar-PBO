@@ -503,8 +503,8 @@ nightborne = Nightborne(190, 227, 'Nightborne', 30, 10, 3)
 knight = Knight(200, 260, 'Knight', 30, 10, 3)
 
 #char select
-nightborne_select = Nightborne(450, 227, 'Nightborne', 30, 10, 3)
-knight_select = Knight(300, 260, 'Knight', 30, 10, 3)
+nightborne_select = Nightborne(450, 312, 'Nightborne', 30, 10, 3)
+knight_select = Knight(300, 345, 'Knight', 30, 10, 3)
 character = None
 
 #level 1 dan 2
