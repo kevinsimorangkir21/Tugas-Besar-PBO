@@ -661,7 +661,8 @@ while run:
 					asset.current_fighter = 1
 					asset.action_cooldown
 					asset.game_over = 0
-					level_4 = True	
+					level_4 = True
+					level_5 = False	
 				if level_5_button.draw():
 					level_4 = False
 					level_5 = True
