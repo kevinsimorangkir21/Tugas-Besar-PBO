@@ -822,8 +822,8 @@ while run:
 					level_5 = False
 					level_6 = True
 					knight.reset()
-					for bandit in bandit_list2:
-						bandit.reset()
+					for wizard1 in wizard_list2:
+						wizard1.reset()
 					asset.current_fighter = 1
 					asset.action_cooldown
 					asset.game_over = 0		
@@ -831,12 +831,13 @@ while run:
 				Enemy_Hero.screen.blit(asset.defeat_img, (290, 50))
 				if restart_button.draw():
 					knight.reset()
-					for wizard in wizard_list2:
-						wizard.reset()
+					for wizard1 in wizard_list2:
+						wizard1.reset()
 					asset.current_fighter = 1
 					asset.action_cooldown
 					asset.game_over = 0
-	
+					level_1 = True
+
 	elif level_6:
 		Enemy_Hero.Display.draw_bg()
 		#draw panel
