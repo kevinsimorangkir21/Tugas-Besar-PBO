@@ -384,8 +384,6 @@ while run:
 				Enemy_Hero.screen.blit(asset.defeat_img, (290, 50))
 				if restart_button.draw():
 					knight.reset()
-					for bandit in bandit_list:
-						bandit.reset()
 					for bandit in bandit_list2:
 						bandit.reset()
 					asset.current_fighter = 1
@@ -524,8 +522,8 @@ while run:
 					level_3 = False
 					level_4 = True
 					knight.reset()
-					for wizard in wizard_list:
-						wizard.reset()
+					for siren in siren_list:
+						siren.reset()
 					asset.current_fighter = 1
 					asset.action_cooldown
 					asset.game_over = 0		
