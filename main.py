@@ -818,7 +818,7 @@ while run:
 					asset.game_over = 0
 					level_5 = True
 					level_6 = False	
-				if level_5_button.draw():
+				if level_6_button.draw():
 					level_4 = False
 					level_6 = True
 					knight.reset()
