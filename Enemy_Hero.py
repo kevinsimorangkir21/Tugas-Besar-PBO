@@ -33,8 +33,8 @@ class Display:
 	def draw_panel():
 		#draw panel rectangle
 		screen.blit(asset.panel_img, (0, screen_height - bottom_panel))
-		#show knight stats
-		Display.draw_text(f'{knight.name} HP: {knight.hp}', asset.font, asset.red, 100, screen_height - bottom_panel + 10)
+		#show character stats
+		Display.draw_text(f'{character.name} HP: {character.hp}', asset.font, asset.red, 100, screen_height - bottom_panel + 10)
 		for count, i in enumerate(bandit_list):
 			#show name and health
 			Display.draw_text(f'{i.name} HP: {i.hp}', asset.font, asset.red, 550, (screen_height - bottom_panel + 10) + count * 40)
@@ -42,24 +42,24 @@ class Display:
 	def draw_panel_2():
 		#draw panel rectangle
 		screen.blit(asset.panel_img, (0, screen_height - bottom_panel))
-		#show knight stats
-		Display.draw_text(f'{knight.name} HP: {knight.hp}', asset.font, asset.red, 100, screen_height - bottom_panel + 10)
+		#show character stats
+		Display.draw_text(f'{character.name} HP: {character.hp}', asset.font, asset.red, 100, screen_height - bottom_panel + 10)
 		for count, i in enumerate(bandit_list2):
 			#show name and health
 			Display.draw_text(f'{i.name} HP: {i.hp}', asset.font, asset.red, 550, (screen_height - bottom_panel + 10) + count * 40)
 	def draw_panel_3():
 		#draw panel rectangle
 		screen.blit(asset.panel_img, (0, screen_height - bottom_panel))
-		#show knight stats
-		Display.draw_text(f'{knight.name} HP: {knight.hp}', asset.font, asset.red, 100, screen_height - bottom_panel + 10)
+		#show character stats
+		Display.draw_text(f'{character.name} HP: {character.hp}', asset.font, asset.red, 100, screen_height - bottom_panel + 10)
 		for count, i in enumerate(siren_list):
 			#show name and health
 			Display.draw_text(f'{i.name} HP: {i.hp}', asset.font, asset.red, 550, (screen_height - bottom_panel + 10) + count * 40)
 	def draw_panel_4():
 		#draw panel rectangle
 		screen.blit(asset.panel_img, (0, screen_height - bottom_panel))
-		#show knight stats
-		Display.draw_text(f'{knight.name} HP: {knight.hp}', asset.font, asset.red, 100, screen_height - bottom_panel + 10)
+		#show character stats
+		Display.draw_text(f'{character.name} HP: {character.hp}', asset.font, asset.red, 100, screen_height - bottom_panel + 10)
 		for count, i in enumerate(wizard_list):
 			#show name and health
 			Display.draw_text(f'{i.name} HP: {i.hp}', asset.font, asset.red, 550, (screen_height - bottom_panel + 10) + count * 40)
@@ -67,8 +67,8 @@ class Display:
 	def draw_panel_5():
 		#draw panel rectangle
 		screen.blit(asset.panel_img, (0, screen_height - bottom_panel))
-		#show knight stats
-		Display.draw_text(f'{knight.name} HP: {knight.hp}', asset.font, asset.red, 100, screen_height - bottom_panel + 10)
+		#show character stats
+		Display.draw_text(f'{character.name} HP: {character.hp}', asset.font, asset.red, 100, screen_height - bottom_panel + 10)
 		for count, i in enumerate(wizard_list2):
 			#show name and health
 			Display.draw_text(f'{i.name} HP: {i.hp}', asset.font, asset.red, 550, (screen_height - bottom_panel + 10) + count * 40)
@@ -76,8 +76,8 @@ class Display:
 	def draw_panel_6():
 		#draw panel rectangle
 		screen.blit(asset.panel_img, (0, screen_height - bottom_panel))
-		#show knight stats
-		Display.draw_text(f'{knight.name} HP: {knight.hp}', asset.font, asset.red, 100, screen_height - bottom_panel + 10)
+		#show character stats
+		Display.draw_text(f'{character.name} HP: {character.hp}', asset.font, asset.red, 100, screen_height - bottom_panel + 10)
 		for count, i in enumerate(monster_list):
 			#show name and health
 			Display.draw_text(f'{i.name} HP: {i.hp}', asset.font, asset.red, 550, (screen_height - bottom_panel + 10) + count * 40)
@@ -500,12 +500,7 @@ asset = asset.Game()
 nightborne = Nightborne(200, 260, 'Nightborne', 30, 10, 3)
 knight = Knight(200, 260, 'Knight', 30, 10, 3)
 
-char = 0
-
-if char == 1:
-	char = nightborne
-elif char == 2:
-	char == knight
+character = None
 
 #level 1 dan 2
 bandit1 = Bandit(550, 270, 'Bandit', 2, 6, 1)
