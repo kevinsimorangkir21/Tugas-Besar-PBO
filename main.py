@@ -117,8 +117,7 @@ while run:
 		if asset.start:
 			game_started = True	
 	
-	else:
-		
+	else:		
 		Enemy_Hero.clock.tick(Enemy_Hero.fps)
 		#draw background
 		if level_1:
