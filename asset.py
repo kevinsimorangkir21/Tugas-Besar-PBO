@@ -37,6 +37,9 @@ class Game:
         self.level4_img = pygame.image.load('img/Icons/level_4.png').convert_alpha()
         self.level5_img = pygame.image.load('img/Icons/level_5.png').convert_alpha()
         self.level6_img = pygame.image.load('img/Icons/level_6.png').convert_alpha()
+        self.cchoose_img = pygame.image.load('img/Icons/choose.png').convert_alpha()
+        self.knightbutton_img = pygame.image.load('img/Icons/Knights.png').convert_alpha()
+        self.nightbornebutton_img = pygame.image.load('img/Icons/nightborne.png').convert_alpha()
         # Load victory and defeat images
         self.victory_img = pygame.image.load('img/Icons/victory.png').convert_alpha()
         self.defeat_img = pygame.image.load('img/Icons/defeat.png').convert_alpha()

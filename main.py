@@ -9,6 +9,11 @@ pygame.init()
  
 damage_text_group = Enemy_Hero.damage_text_group
 asset = asset.Game()
+
+#select char
+char_knight = Enemy_Hero.knight_select
+char_nightborne = Enemy_Hero.nightborne_select
+
 #level1 dan 2
 knight = Enemy_Hero.knight
 nightborne = Enemy_Hero.nightborne
@@ -75,6 +80,9 @@ level_3_button = button.Button(Enemy_Hero.screen, 430, 120, asset.level3_img, 12
 level_4_button = button.Button(Enemy_Hero.screen, 430, 120, asset.level4_img, 120, 30)
 level_5_button = button.Button(Enemy_Hero.screen, 430, 120, asset.level5_img, 120, 30)
 level_6_button = button.Button(Enemy_Hero.screen, 430, 120, asset.level6_img, 120, 30)
+choose = button.Button(Enemy_Hero.screen, 325, 50, asset.cchoose_img, 120, 30)
+charknight_button = button.Button(Enemy_Hero.screen, 250, 120, asset.knightbutton_img, 120, 30)
+charnightborne_button = button.Button(Enemy_Hero.screen, 400, 120, asset.nightbornebutton_img, 120, 30)
 
 asset.backsound.play(-1)
 volume_value = 0.05
@@ -82,10 +90,15 @@ asset.backsound.set_volume(volume_value)
 def character_selection_screen():
 	Enemy_Hero.clock.tick(Enemy_Hero.fps)
 	Enemy_Hero.Display.draw_bg()
-	if restart_button.draw():
+	choose.draw()
+	char_knight.update()
+	char_knight.draw()
+	char_nightborne.update()
+	char_nightborne.draw()
+	if charnightborne_button.draw():
 		Enemy_Hero.character = nightborne		
 		asset.start = True
-	if level_2_button.draw():
+	if charknight_button.draw():
 		Enemy_Hero.character = knight
 		asset.start = True
 
