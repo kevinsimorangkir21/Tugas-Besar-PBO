@@ -15,6 +15,7 @@ class Game:
         self.potion_effect = 15
         self.clicked = False
         self.game_over = 0
+        self.start = False
 
         # Define fonts
         self.font = pygame.font.SysFont('Times New Roman', 26)
