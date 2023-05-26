@@ -224,6 +224,8 @@ while run:
 					level_1 = False
 					level_2 = True
 					knight.reset()
+					for bandit in bandit_list:
+						bandit.reset()
 					for bandit in bandit_list2:
 						bandit.reset()
 					asset.current_fighter = 1
