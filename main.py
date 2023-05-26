@@ -664,7 +664,7 @@ while run:
 					level_4 = True	
 				if level_5_button.draw():
 					level_4 = False
-					level_6 = True
+					level_5 = True
 					knight.reset()
 					for bandit in bandit_list2:
 						bandit.reset()
