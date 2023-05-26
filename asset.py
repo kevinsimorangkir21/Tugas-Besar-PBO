@@ -58,9 +58,9 @@ class Game:
         self.deathsiren_sound = pygame.mixer.Sound('sound\siren\matisiren.wav')
         self.hurtsiren_sound = pygame.mixer.Sound('sound\siren\hurtsiren.wav')
         #wizard sound
-        self.wizardattack_sound =  pygame.mixer.Sound('sound\wizardattack.wav')
-        self.wizarddeath_sound =  pygame.mixer.Sound('sound\wizarddeath.wav')
-        self.wizardhurt_sound =  pygame.mixer.Sound('sound\wizardhurt.wav')
+        self.wizardattack_sound =  pygame.mixer.Sound('sound\wizard\wizardattack.wav')
+        self.wizarddeath_sound =  pygame.mixer.Sound('sound\wizard\wizarddeath.wav')
+        self.wizardhurt_sound =  pygame.mixer.Sound('sound\wizard\wizardhurt.wav')
         #bossmonstersound
         self.monsterattack_sound = pygame.mixer.Sound('sound\monsterattack.wav')
         self.monsterdeath_sound = pygame.mixer.Sound('sound\monsterdeath.wav')
