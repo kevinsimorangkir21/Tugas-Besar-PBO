@@ -40,15 +40,17 @@ class Game:
         self.victory_img = pygame.image.load('img/Icons/victory.png').convert_alpha()
         self.defeat_img = pygame.image.load('img/Icons/defeat.png').convert_alpha()
         # Sword image
-        self.sword_img = pygame.image.load('img/Icons/sword.png').convert_alpha()
-        self.attackknight_sound = pygame.mixer.Sound('sound\swinging-staff-whoosh-strong-08-44658.wav')
+        self.sword_img = pygame.image.load('img/Icons/sword.png').convert_alpha()       
         self.attackbandit_sound = pygame.mixer.Sound('sound\mixkit-dagger-woosh-1487.wav')
-        self.gethurt_knight = pygame.mixer.Sound('sound\Studio_Project_V1.wav')
         self.backsound = pygame.mixer.Sound('sound\ssound.mp3')
         self.healup = pygame.mixer.Sound('sound\heal-up.wav')
         self.gethurt_bandit = pygame.mixer.Sound('sound\suarabandit.wav')
+        #bandit sound
+        self.attackbandit_sound = pygame.mixer.Sound('sound\mixkit-dagger-woosh-1487.wav')
         self.death_bandit = pygame.mixer.Sound('sound\matibandit1.wav')
         self.death_knight = pygame.mixer.Sound('sound\matiknight1.wav')
+        self.gethurt_knight = pygame.mixer.Sound('sound\Studio_Project_V1.wav')
+        self.attackknight_sound = pygame.mixer.Sound('sound\swinging-staff-whoosh-strong-08-44658.wav')
         #siren sound
         self.attacksirensword_sound = pygame.mixer.Sound('sound\sirenswordsound.wav')
         self.attacksirenvoice_sound = pygame.mixer.Sound('sound/nyerangsiren.wav')
