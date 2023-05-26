@@ -700,9 +700,9 @@ while run:
 		#draw fighters
 		knight.update()
 		knight.draw()
-		for wizard in wizard_list2:
-			wizard.update()
-			wizard.draw()
+		for wizard1 in wizard_list2:
+			wizard1.update()
+			wizard1.draw()
 
 		#draw the damage text
 		damage_text_group.update()
@@ -716,13 +716,13 @@ while run:
 		#make sure mouse is visible
 		pygame.mouse.set_visible(True)
 		pos = pygame.mouse.get_pos()
-		for count, wizard in enumerate(wizard_list2):
-			if wizard.rect.collidepoint(pos):
+		for count, wizard1 in enumerate(wizard_list2):
+			if wizard1.rect.collidepoint(pos):
 				#hide mouse
 				pygame.mouse.set_visible(False)
 				#show sword in place of mouse cursor
 				Enemy_Hero.screen.blit(asset.sword_img, pos)
-				if asset.clicked == True and wizard.alive == True:
+				if asset.clicked == True and wizard1.alive == True:
 					asset.attack = True
 					target = wizard_list2[count]
 		if potion_button.draw():
@@ -763,28 +763,28 @@ while run:
 
 
 			#enemy action
-			for count, wizard in enumerate(wizard_list2):
+			for count, wizard1 in enumerate(wizard_list2):
 				if asset.current_fighter == 2 + count:
-					if wizard.alive == True:
+					if wizard1.alive == True:
 						asset.action_cooldown += 1
 						if asset.action_cooldown >= asset.action_wait_time:
 							#check if wizard needs to heal first
-							if (wizard.hp / wizard.max_hp) < 0.5 and wizard.potions > 0:
+							if (wizard1.hp / wizard1.max_hp) < 0.5 and wizard1.potions > 0:
 								#check if the potion would heal the wizard beyond max health
-								if wizard.max_hp - wizard.hp > asset.potion_effect:
+								if wizard1.max_hp - wizard1.hp > asset.potion_effect:
 									heal_amount = asset.potion_effect
 								else:
-									heal_amount = wizard.max_hp - wizard.hp
-								wizard.hp += heal_amount
-								wizard.potions -= 1
-								damage_text = Enemy_Hero.DamageText(wizard.rect.centerx, wizard.rect.y, str(heal_amount), asset.green)
+									heal_amount = wizard1.max_hp - wizard1.hp
+								wizard1.hp += heal_amount
+								wizard1.potions -= 1
+								damage_text = Enemy_Hero.DamageText(wizard1.rect.centerx, wizard1.rect.y, str(heal_amount), asset.green)
 								damage_text_group.add(damage_text)
 								asset.healup.play()
 								asset.current_fighter += 1
 								asset.action_cooldown = 0
 							#attack
 							else:
-								wizard.attack(knight)
+								wizard1.attack(knight)
 		
 								asset.current_fighter += 1
 								asset.action_cooldown = 0
@@ -797,11 +797,11 @@ while run:
 
 
 		#check if all wizard are dead
-		alive_wizard = 0
-		for wizard in wizard_list2:
-			if wizard.alive == True:
-				alive_wizard += 1
-		if alive_wizard == 0:
+		alive_wizard1 = 0
+		for wizard1 in wizard_list2:
+			if wizard1.alive == True:
+				alive_wizard1 += 1
+		if alive_wizard1 == 0:
 			asset.game_over = 1
 
 
@@ -811,12 +811,12 @@ while run:
 				Enemy_Hero.screen.blit(asset.victory_img, (250, 50))
 				if restart_button.draw():
 					knight.reset()
-					for wizard in wizard_list2:
-						wizard.reset()
+					for wizard1 in wizard_list2:
+						wizard1.reset()
 					asset.current_fighter = 1
 					asset.action_cooldown
 					asset.game_over = 0
-					level_4 = True	
+					level_5 = True	
 				if level_5_button.draw():
 					level_4 = False
 					level_6 = True
