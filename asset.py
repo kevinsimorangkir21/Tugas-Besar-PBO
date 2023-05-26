@@ -65,3 +65,4 @@ class Game:
         self.monsterattack_sound = pygame.mixer.Sound('sound\monster\monsterattack.wav')
         self.monsterdeath_sound = pygame.mixer.Sound('sound\monster\monsterdeath.wav')
         self.monsterhurt_sound = pygame.mixer.Sound('sound\monster\monsterhurt.wav')
+        #nightbornesound
