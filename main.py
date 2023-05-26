@@ -82,8 +82,8 @@ level_1 = False
 level_2 = False
 level_3 = False
 level_4 = False
-level_5 = False
-level_6 = True
+level_5 = True
+level_6 = False
 
 run = True
 while run:
@@ -347,7 +347,7 @@ while run:
 
 
 		#check if all bandits are dead
-		alive_bandits = 0
+		alive_bandit = 0
 		for bandit in bandit_list2:
 			if bandit.alive == True:
 				alive_bandits += 1
@@ -531,7 +531,8 @@ while run:
 						siren.reset()
 					asset.current_fighter = 1
 					asset.action_cooldown
-					asset.game_over = 0			
+					asset.game_over = 0
+					level_1 = True			
 		
 	elif level_4:
 		Enemy_Hero.Display.draw_bg()
@@ -954,7 +955,7 @@ while run:
 					asset.current_fighter = 1
 					asset.action_cooldown
 					asset.game_over = 0
-					level_4 = True		
+					level_6 = True		
 			if asset.game_over == -1:
 				Enemy_Hero.screen.blit(asset.defeat_img, (290, 50))
 				if restart_button.draw():
