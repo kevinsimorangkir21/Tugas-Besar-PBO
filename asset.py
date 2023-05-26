@@ -49,9 +49,9 @@ class Game:
         self.attackbandit_sound = pygame.mixer.Sound('sound\bandit\serangbandit.wav')
         self.death_bandit = pygame.mixer.Sound('sound\bandit\matibandit1.wav')
         #knight sound
-        self.death_knight = pygame.mixer.Sound('sound\matiknight1.wav')
-        self.gethurt_knight = pygame.mixer.Sound('sound\knighthurt.wav')
-        self.attackknight_sound = pygame.mixer.Sound('sound\knightattack.wav')
+        self.death_knight = pygame.mixer.Sound('sound\knight\matiknight1.wav')
+        self.gethurt_knight = pygame.mixer.Sound('sound\knight\knighthurt.wav')
+        self.attackknight_sound = pygame.mixer.Sound('sound\knight\knightattack.wav')
         #siren sound
         self.attacksirensword_sound = pygame.mixer.Sound('sound\sirenswordsound.wav')
         self.attacksirenvoice_sound = pygame.mixer.Sound('sound/nyerangsiren.wav')
