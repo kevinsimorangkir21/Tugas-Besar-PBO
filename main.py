@@ -82,8 +82,8 @@ level_1 = False
 level_2 = False
 level_3 = False
 level_4 = False
-level_5 = True
-level_6 = False
+level_5 = False
+level_6 = True
 
 run = True
 while run:
@@ -974,6 +974,7 @@ while run:
 					asset.current_fighter = 1
 					asset.action_cooldown
 					asset.game_over = 0
+					level_1 = True
 	
 	for event in pygame.event.get():
 		if event.type == pygame.QUIT:
