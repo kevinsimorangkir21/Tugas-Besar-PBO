@@ -53,7 +53,7 @@ python main.py
 ```
 
 ## **UML Diagram**
-<img src="UML/UML.png" />
+<img src="UML/UMLV2.png" />
 
 ## **Screenshots**
 <img src="img/Screenshot/Lost - Screenshot 1.png" />
