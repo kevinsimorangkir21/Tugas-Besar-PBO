@@ -85,7 +85,7 @@ charknight_button = button.Button(Enemy_Hero.screen, 250, 120, asset.knightbutto
 charnightborne_button = button.Button(Enemy_Hero.screen, 400, 120, asset.nightbornebutton_img, 120, 30)
 
 asset.backsound.play(-1)
-volume_value = 0.1
+volume_value = 0.35
 asset.backsound.set_volume(volume_value)
 def character_selection_screen():
 	Enemy_Hero.clock.tick(Enemy_Hero.fps)
