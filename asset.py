@@ -48,7 +48,7 @@ class Game:
         self.sword_img = pygame.image.load('img/Icons/sword.png').convert_alpha()
         # main sound       
         self.backsound = pygame.mixer.Sound('sound\ssound.mp3')
-        self.healup = pygame.mixer.Sound('sound\heal-up.wav')
+        self.healup = pygame.mixer.Sound('sound\heal-up.wav')        
         #bandit sound
         self.gethurt_bandit = pygame.mixer.Sound('sound\ibandit\hurtbandit.wav')
         self.attackbandit_sound = pygame.mixer.Sound('sound\ibandit\serangbandit.wav')

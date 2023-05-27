@@ -1,6 +1,5 @@
 import pygame
 
-
 # Button class
 class Button():
     def __init__(self, surface, x, y, image, size_x, size_y):
@@ -10,6 +9,7 @@ class Button():
         self.hovered = False
         self.clicked = False
         self.surface = surface
+        self.click = pygame.mixer.Sound("sound/click.mp3")
 
     def draw(self):
         action = False
@@ -23,6 +23,7 @@ class Button():
             if pygame.mouse.get_pressed()[0] == 1 and not self.clicked:
                 action = True
                 self.clicked = True
+                self.click.play()
         else:
             self.hovered = False
 
