@@ -80,7 +80,6 @@ level_3_button = button.Button(Enemy_Hero.screen, 430, 120, asset.level3_img, 12
 level_4_button = button.Button(Enemy_Hero.screen, 430, 120, asset.level4_img, 120, 30)
 level_5_button = button.Button(Enemy_Hero.screen, 430, 120, asset.level5_img, 120, 30)
 level_6_button = button.Button(Enemy_Hero.screen, 430, 120, asset.level6_img, 120, 30)
-choose = button.Button(Enemy_Hero.screen, 325, 50, asset.cchoose_img, 120, 30)
 charknight_button = button.Button(Enemy_Hero.screen, 250, 120, asset.knightbutton_img, 120, 30)
 charnightborne_button = button.Button(Enemy_Hero.screen, 400, 120, asset.nightbornebutton_img, 120, 30)
 
@@ -90,7 +89,7 @@ asset.backsound.set_volume(volume_value)
 def character_selection_screen():
 	Enemy_Hero.clock.tick(Enemy_Hero.fps)
 	Enemy_Hero.Display.draw_bg2()
-	choose.draw()
+	Enemy_Hero.screen.blit(asset.cchoose_img, (50, 50))
 	char_knight.update()
 	char_knight.draw()
 	char_nightborne.update()
