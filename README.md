@@ -96,4 +96,4 @@ python main.py
 <img src="img/Screenshot/Lost - Screenshot 1.png" />
 
 ## **Video Demo Game LOST**
-
+[![Lost Game Simulation](https://i.ytimg.com/vi/p2YXdauOEM0/maxresdefault.jpg)](https://www.youtube.com/watch?v=H1RpdxTeuoE)
