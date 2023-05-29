@@ -24,7 +24,18 @@ In this game, we present a game experience that combines pixelated graphic eleme
 |--|--|--|--|--|--|
 
 ## **Role Member Of CHUAKZ Team**
+<div align="center">
 
+| Name | Role | Position
+| :---: | :---: | :---: |
+| Kevin Simorangkir     | Programmer | Ketua |
+| M. Rizki Alfaina      | Programmer | Anggota |
+| Ignasius Krisna       | UI / UX Designer | Anggota |
+| Ferreyla Setara Ibn   | UI / UX Designer | Ketua |
+| Nur Hikmah Juliyanti  | Programmer | Ketua |
+| Rizka Fauziyah        | Programmer | Ketua |
+
+</div>
 
 ## **Instalation Steps**
 <li> Install Python 3.6 or higher </li>
