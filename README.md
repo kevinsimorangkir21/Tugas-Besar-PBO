@@ -33,7 +33,7 @@ In this game, we present a game experience that combines pixelated graphic eleme
 | Ignasius Krisna       | UI / UX Designer | Anggota |
 | Ferreyla Setara Ibn   | UI / UX Designer | Anggota |
 | Nur Hikmah Juliyanti  | UI / UX Designer | Anggota |
-| Rizka Fauziyah        | Programmer | Ketua |
+| Rizka Fauziyah        | UI / UX Designer | Ketua |
 
 </div>
 
