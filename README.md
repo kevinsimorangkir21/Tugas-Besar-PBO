@@ -1,5 +1,5 @@
 <div align="center">
-<img src="img/logo/Lost-Cover.gif" width="100%" />
+<img src="img/logo/cover.png" width="100%" />
 <h1> Lost Is A Game Created by CHUAKZ Team </h1>
 <h2> Version : Beta 0.1 </h2>
 
