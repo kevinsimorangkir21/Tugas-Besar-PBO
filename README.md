@@ -61,6 +61,9 @@ pip instal pygame
 ```
 
 ## **Running the Game with Python**
+
+### The following is the Game LOST installation flow
+
 <li> Install Python 3.6 or higher</li>
 Run the following command to start the game:
 
