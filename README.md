@@ -42,7 +42,7 @@ In this game, we present a game experience that combines pixelated graphic eleme
 
 ## **Instalation Steps**
 
-### The following is the Game LOST installation flow
+### The following is the Game LOST installation flow :
 
 <li> Install Python 3.6 or higher </li>
 <li> Install python-pip or python3-pip </li>
