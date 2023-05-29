@@ -51,6 +51,7 @@ cd Tugas-Besar-PBO
 ```
 
 <li> After that it is expected to install pygame </li>
+
 ```bash
 pip instal pygame
 
