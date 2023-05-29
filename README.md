@@ -41,6 +41,9 @@ In this game, we present a game experience that combines pixelated graphic eleme
 </div>
 
 ## **Instalation Steps**
+
+### The following is the Game LOST installation flow
+
 <li> Install Python 3.6 or higher </li>
 <li> Install python-pip or python3-pip </li>
 <li> Open terminal where you want ti clone the repository and run the following command : </li>
