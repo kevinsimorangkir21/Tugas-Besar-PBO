@@ -46,15 +46,15 @@ In this game, we present a game experience that combines pixelated graphic eleme
 <li> Open terminal where you want ti clone the repository and run the following command : </li>
 
 ```bash
-     git clone https://github.com/kevinsimorangkir21/Tugas-Besar-PBO.git
-     cd Tugas-Besar-PBO
+git clone https://github.com/kevinsimorangkir21/Tugas-Besar-PBO.git
+cd Tugas-Besar-PBO
 ```
 
 <li> After that it is expected to install pygame </li>
-    ```bash
-    pip instal pygame
+```bash
+pip instal pygame
 
-    ```
+```
 
 ## **Running the Game with Python**
 <li> Install Python 3.6 or higher</li>
