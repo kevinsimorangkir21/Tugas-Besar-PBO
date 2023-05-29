@@ -84,6 +84,7 @@ python main.py
 <img src="UML/UMLV2.png" />
 
 ## **Screenshots**
+### The following is the appearance of the game in this LOST game which has been arranged with a perfect structure according to the plot :
 <img src="img/Screenshot/Lost - Screenshot 1.png" />
 
 ## **Video Demo Game LOST**
