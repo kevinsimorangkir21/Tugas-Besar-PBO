@@ -79,7 +79,7 @@ python main.py
 
 ## **UML Diagram**
 
-### The following is the UML diagram in this LOST game which has been arranged in a perfect structure according to the plot
+### The following is the UML diagram in this LOST game which has been arranged in a perfect structure according to the plot :
 
 <img src="UML/UMLV2.png" />
 
