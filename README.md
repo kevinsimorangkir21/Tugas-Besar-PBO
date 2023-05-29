@@ -16,7 +16,7 @@
 
 [Member Of CHUAKZ Team](#member-of-chuakz-team)
 
-[Role & Position Member Of CHUAKZ Team]
+[Role & Position Member Of CHUAKZ Team](#role--position-member-of-chuakz-team)
 
 
 ## **Introduction Game**
