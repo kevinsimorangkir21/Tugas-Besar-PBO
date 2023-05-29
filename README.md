@@ -67,13 +67,13 @@ pip instal pygame
 <li> Install Python 3.6 or higher</li>
 Run the following command to start the game:
 
-```
+```bash
 python3 main.py
 ```
 
-Alternative command:
+<li> Alternative command: </li>
 
-```
+```bash
 python main.py
 ```
 
