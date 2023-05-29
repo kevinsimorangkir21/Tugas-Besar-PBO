@@ -1,6 +1,7 @@
 <div align="center">
 <img src="img/logo/Lost-Cover.gif" width="100%" />
 <h1> Lost Is A Game Created by CHUAKZ Team </h1>
+<h1> Version : Beta 0.1 </h1>
 
 [![Library](https://img.shields.io/badge/pygame-orange)](#)
 [![Github Commit](https://img.shields.io/github/commit-activity/m/kevinsimorangkir21/Tugas-Besar-PBO)](#)
