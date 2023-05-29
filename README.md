@@ -59,3 +59,4 @@ python main.py
 <img src="img/Screenshot/Lost - Screenshot 1.png" />
 
 ## **Video Demo Game LOST**
+https://youtu.be/H1RpdxTeuoE
