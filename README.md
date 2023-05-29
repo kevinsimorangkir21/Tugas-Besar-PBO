@@ -14,7 +14,7 @@
 
 [Installation Steps](#instalation-steps)
 
-[Member Of CHUAKZ Team]
+[Member Of CHUAKZ Team](#member-of-chuakz-team)
 
 
 ## **Introduction Game**
